@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private Animator _animator;
 
     [SerializeField] private PlayerCamera _playerCamera;
     [SerializeField] private Transform _playerModelTransform;
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _dashSpeed;
 
     private bool _bDashing;
-    private Vector2 _movementInput;
+    private Vector3 _movementInput;
     private CharacterController _characterController;
 
     private void Awake()
@@ -25,10 +26,24 @@ public class PlayerController : MonoBehaviour
         _characterController = GetComponent<CharacterController>();
     }
 
+    private Vector3 _animatorSmooth;
+    
     private void Update()
     {
         UpdateMovement();
         UpdateRotation();
+        
+        
+        var target =  _playerModelTransform.InverseTransformDirection(_movementInput);
+        
+        Debug.DrawRay(transform.position + (Vector3.up * 2), _movementInput, Color.green);
+        Debug.DrawRay(transform.position + (Vector3.up * 2), target, Color.red);
+
+        _animatorSmooth = Vector3.Lerp(_animatorSmooth, target, Time.deltaTime * 10f);
+        
+        _animator.SetFloat("MovementX",_animatorSmooth.x);
+        _animator.SetFloat("MovementZ",_animatorSmooth.z);
+
     }
 
     private void UpdateMovement()
@@ -36,12 +51,7 @@ public class PlayerController : MonoBehaviour
         if(_bDashing)
             return;
         
-        Vector3 targetVelocity = Vector3.zero;
-        targetVelocity.x = _movementInput.x;
-        targetVelocity.z = _movementInput.y;
-        
-        targetVelocity *= (_walkSpeed * Time.deltaTime);
-        
+        Vector3 targetVelocity = _movementInput * (_walkSpeed * Time.deltaTime);
         _characterController.Move(targetVelocity);
     }
 
@@ -76,11 +86,8 @@ public class PlayerController : MonoBehaviour
     {
         _bDashing = true;
         
-        var dashDirection = Vector3.zero;
-        dashDirection.x = _movementInput.x;
-        dashDirection.z = _movementInput.y;
-
-
+        var dashDirection = _movementInput;
+        
         var alpha = 0f;
         for (; ; )
         {
@@ -103,7 +110,7 @@ public class PlayerController : MonoBehaviour
         var inputVector = context.ReadValue<Vector2>();
         inputVector.Normalize();
 
-        _movementInput = inputVector;
+        _movementInput =  new Vector3(inputVector.x,0,inputVector.y);
     }
 
     public void OnFireInput(InputAction.CallbackContext context)
