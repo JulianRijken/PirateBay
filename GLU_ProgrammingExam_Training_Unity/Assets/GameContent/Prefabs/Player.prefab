@@ -79,11 +79,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f927ea53358b39046b9661e8f9103578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 5007203337319168885}
   _playerCamera: {fileID: 0}
   _playerModelTransform: {fileID: 6479779334644734008}
   _weapon: {fileID: 4913275498653549615}
-  _walkSpeed: 6
+  _maxSpeed: 5
   _rotateSpeed: 30
   _dashCurve:
     serializedVersion: 2
@@ -357,15 +356,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8457044035737259333, guid: 194f8fbf67729fd40936b3465af2cc47, type: 3}
+      propertyPath: _smoothSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 194f8fbf67729fd40936b3465af2cc47, type: 3}
 --- !u!4 &4917804887579417815 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4780083634823512, guid: 194f8fbf67729fd40936b3465af2cc47, type: 3}
-  m_PrefabInstance: {fileID: 4913275497998531983}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &5007203337319168885 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95242923974199034, guid: 194f8fbf67729fd40936b3465af2cc47, type: 3}
   m_PrefabInstance: {fileID: 4913275497998531983}
   m_PrefabAsset: {fileID: 0}

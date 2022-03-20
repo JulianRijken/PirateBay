@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform[] _playerSpawnTransforms;
     [SerializeField] private PlayerController _playerPrefab;
     private PlayerController _playerController;
-    
+
     private void Start()
     {
         StartGame();

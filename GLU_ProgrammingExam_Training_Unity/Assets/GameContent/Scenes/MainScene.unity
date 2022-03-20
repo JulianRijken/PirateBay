@@ -426,7 +426,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800117617}
-  m_LocalRotation: {x: 0.34771743, y: -1e-45, z: -0, w: 0.93759936}
+  m_LocalRotation: {x: 0.34771743, y: 3e-45, z: -1e-45, w: 0.93759936}
   m_LocalPosition: {x: -4.59, y: 9.6, z: -5.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -610,7 +610,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.34771743, y: -1e-45, z: 0, w: 0.93759936}
+  m_LocalRotation: {x: 0.34771743, y: 3e-45, z: -1e-45, w: 0.93759936}
   m_LocalPosition: {x: -4.59, y: 9.6, z: -5.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1215,13 +1215,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3562913238496686282, guid: 837ef02b7f1948b4f825954d0f614c7a, type: 3}
+      propertyPath: _smoothSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4913275498070269986, guid: 837ef02b7f1948b4f825954d0f614c7a, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4913275498070269987, guid: 837ef02b7f1948b4f825954d0f614c7a, type: 3}
-      propertyPath: _walkSpeed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4913275498070269987, guid: 837ef02b7f1948b4f825954d0f614c7a, type: 3}
       propertyPath: _playerCamera
@@ -1269,6 +1269,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4913275498070270013, guid: 837ef02b7f1948b4f825954d0f614c7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007203337319168885, guid: 837ef02b7f1948b4f825954d0f614c7a, type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

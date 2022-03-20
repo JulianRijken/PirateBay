@@ -9,7 +9,8 @@ public class Attributes : MonoBehaviour
     public delegate void OnHealthChangeEvent(float newHealth,float clampedDelta, float delta, float maxHealth);
     public event OnHealthChangeEvent OnHealthChange;
     
-    
+
+
     private float _health;
     [SerializeField] private float _maxHealth;
 

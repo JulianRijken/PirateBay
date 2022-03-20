@@ -6,12 +6,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
-
+    
     [SerializeField] private PlayerCamera _playerCamera;
     [SerializeField] private Transform _playerModelTransform;
     [SerializeField] private Weapon _weapon;
-    [SerializeField] private float _walkSpeed;
+    [SerializeField] private float _maxSpeed;
     [SerializeField] private float _rotateSpeed;
     [SerializeField] private AnimationCurve _dashCurve;
     [SerializeField] private float _dashTime;
@@ -21,12 +20,16 @@ public class PlayerController : MonoBehaviour
     private Vector3 _movementInput;
     private CharacterController _characterController;
 
+    public float MaxSpeed => _maxSpeed;
+
+    public delegate void OnDashEvent();
+    public event OnDashEvent OnDash;
+    
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
     }
 
-    private Vector3 _animatorSmooth;
     
     private void Update()
     {
@@ -34,24 +37,17 @@ public class PlayerController : MonoBehaviour
         UpdateRotation();
         
         
-        var target =  _playerModelTransform.InverseTransformDirection(_movementInput);
-        
-        Debug.DrawRay(transform.position + (Vector3.up * 2), _movementInput, Color.green);
-        Debug.DrawRay(transform.position + (Vector3.up * 2), target, Color.red);
-
-        _animatorSmooth = Vector3.Lerp(_animatorSmooth, target, Time.deltaTime * 10f);
-        
-        _animator.SetFloat("MovementX",_animatorSmooth.x);
-        _animator.SetFloat("MovementZ",_animatorSmooth.z);
+     
 
     }
+    
 
     private void UpdateMovement()
     {
         if(_bDashing)
             return;
         
-        Vector3 targetVelocity = _movementInput * (_walkSpeed * Time.deltaTime);
+        Vector3 targetVelocity = _movementInput * (_maxSpeed * Time.deltaTime);
         _characterController.Move(targetVelocity);
     }
 
@@ -85,6 +81,8 @@ public class PlayerController : MonoBehaviour
     private IEnumerator DashTimeline()
     {
         _bDashing = true;
+        
+        OnDash?.Invoke();
         
         var dashDirection = _movementInput;
         
