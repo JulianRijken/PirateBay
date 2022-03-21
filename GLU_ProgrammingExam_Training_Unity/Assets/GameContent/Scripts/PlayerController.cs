@@ -11,34 +11,37 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _playerModelTransform;
     [SerializeField] private Weapon _weapon;
     [SerializeField] private float _maxSpeed;
+    [SerializeField] private float _runSpeed;
     [SerializeField] private float _rotateSpeed;
     [SerializeField] private AnimationCurve _dashCurve;
     [SerializeField] private float _dashTime;
     [SerializeField] private float _dashSpeed;
+    [SerializeField] private float _dashDelay;
 
-    private bool _bDashing;
+    private bool _bDashingAllowed = true;
+    private bool _bDashing = false;
     private Vector3 _movementInput;
     private CharacterController _characterController;
 
     public float MaxSpeed => _maxSpeed;
+
 
     public delegate void OnDashEvent();
     public event OnDashEvent OnDash;
     
     private void Awake()
     {
+        StartCoroutine(ZeroToOne(DoABarrelRoll, StopBarrelRoll));
+        
         _characterController = GetComponent<CharacterController>();
     }
 
-    
+
+
     private void Update()
     {
         UpdateMovement();
         UpdateRotation();
-        
-        
-     
-
     }
     
 
@@ -47,7 +50,7 @@ public class PlayerController : MonoBehaviour
         if(_bDashing)
             return;
         
-        Vector3 targetVelocity = _movementInput * (_maxSpeed * Time.deltaTime);
+        Vector3 targetVelocity = _movementInput * (_runSpeed * Time.deltaTime);
         _characterController.Move(targetVelocity);
     }
 
@@ -72,7 +75,10 @@ public class PlayerController : MonoBehaviour
 
     private void Dash()
     {
-        if(_bDashing)
+        if (_movementInput.magnitude == 0)
+            return;
+
+        if(!_bDashingAllowed)
             return;
         
         StartCoroutine(DashTimeline());
@@ -81,13 +87,16 @@ public class PlayerController : MonoBehaviour
     private IEnumerator DashTimeline()
     {
         _bDashing = true;
+        _bDashingAllowed = false;
         
         OnDash?.Invoke();
         
         var dashDirection = _movementInput;
         
+        
+        
         var alpha = 0f;
-        for (; ; )
+        while(true)
         {
             _characterController.Move(dashDirection * (_dashCurve.Evaluate(alpha) * _dashSpeed * Time.deltaTime));
             
@@ -97,10 +106,37 @@ public class PlayerController : MonoBehaviour
         }
 
         _bDashing = false;
+        
+        yield return new WaitForSeconds(_dashDelay);
 
+        _bDashingAllowed = true;
     }
         
+    
+    private IEnumerator ZeroToOne(Action<float> funcToExec, Action<bool> callback)
+    {
+        callback(false);
 
+        for (float rawAlpha=0, alpha=0; rawAlpha < 1f + Time.deltaTime; rawAlpha += Time.deltaTime, alpha = rawAlpha > 1f ? 1f : rawAlpha)
+        {
+            funcToExec(alpha);
+            yield return new WaitForFixedUpdate();
+        }
+
+        callback(true);
+    }
+
+    private void DoABarrelRoll(float a)
+    {
+        Debug.Log(" Hallo" + a);
+    }
+
+    private void StopBarrelRoll(bool stopping)
+    {
+        Debug.Log(stopping ? "Stopped Barrelrolling" : "Started");
+    }
+    
+    
 
     
     public void OnMovementInput(InputAction.CallbackContext context)

@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b2fec695-e0d6-43c2-beb8-8ddbbe791966" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GLU_ProgrammingExam_Training_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GLU_ProgrammingExam_Training_Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimationController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Animations/PlayerAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Animations/PlayerAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Attributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Attributes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonPrototype/Prefabs/Characters/Character_Male_Face_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonPrototype/Prefabs/Characters/Character_Male_Face_01.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +45,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -91,6 +89,8 @@
       <workItem from="1647426344291" duration="1872000" />
       <workItem from="1647504147084" duration="9420000" />
       <workItem from="1647710586271" duration="3079000" />
+      <workItem from="1647860440552" duration="7896000" />
+      <workItem from="1647868649139" duration="1686000" />
     </task>
     <servers />
   </component>

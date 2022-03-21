@@ -23,7 +23,10 @@ public class AnimationController : MonoBehaviour
 
     private void OnDash()
     {
+        //Debug.Log("Dash");
+
         _animator.SetTrigger("Dash");
+        
     }
 
     private void Update()
