@@ -11,6 +11,23 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerController _playerPrefab;
     private PlayerController _playerController;
 
+    public static GameManager Instance;
+
+    public static PlayerController PlayerController => Instance._playerController;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     private void Start()
     {
         StartGame();

@@ -31,8 +31,7 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
-        StartCoroutine(ZeroToOne(DoABarrelRoll, StopBarrelRoll));
-        
+        //StartCoroutine(ZeroToOne(DoABarrelRoll, StopBarrelRoll));
         _characterController = GetComponent<CharacterController>();
     }
 
