@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     public delegate void OnDashEvent();
     public event OnDashEvent OnDash;
+
+    public Vector3 Location => _playerModelTransform.position;
     
     private void Awake()
     {
