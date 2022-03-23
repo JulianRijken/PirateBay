@@ -16,7 +16,7 @@ filters = {
 	settings = true
 }
 scopes = {
-	"last_search.AB59B443" = "pro"
+	"last_search.AB59B443" = "enemy"
 	"last_search.AB59B290" = "projectile"
 }
 providers = {

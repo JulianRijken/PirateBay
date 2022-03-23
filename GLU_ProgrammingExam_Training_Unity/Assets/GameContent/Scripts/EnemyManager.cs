@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +9,15 @@ public class EnemyManager : MonoBehaviour
 
     [SerializeField] private AnimationCurve _spawnIntervalCruve;
     [SerializeField] private AnimationCurve _maxEnemysCruve;
-    [SerializeField] private Enemy _enemyPrefab;
+    [SerializeField] private SpawnOption[] _enemySpawnOptions;
     [SerializeField] private Vector2 _spawnRadiusRange;
     [SerializeField] private float _maxDistanceFromNavMesh;
     [SerializeField] private int _spawnMask;
+
+    #if UNITY_EDITOR
+    [Header("Debug")]
+    [SerializeField] private Enemy _testEnemy;
+    #endif
     
     private float _gameTime;
     private bool _enabled = true;
@@ -22,6 +26,14 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     {
+        #if UNITY_EDITOR
+        if (_testEnemy)
+        {
+            Instantiate(_testEnemy, Vector3.zero, Quaternion.identity);
+            return;
+        }
+        #endif
+        
         StartCoroutine(EnemySpawnInterval());
     }
 
@@ -29,6 +41,13 @@ public class EnemyManager : MonoBehaviour
     {
         if(_enabled)
             _gameTime += Time.deltaTime;
+    }
+    
+    [System.Serializable]
+    private struct SpawnOption
+    {
+        public Enemy EnemyPrefeb;
+        public int SpawnChance;
     }
 
     private IEnumerator EnemySpawnInterval()
@@ -55,21 +74,54 @@ public class EnemyManager : MonoBehaviour
     private bool SpawnEnemy()
     {
         // Get random position
+        var randomOffset = Random.insideUnitCircle *  Random.Range(_spawnRadiusRange.x, _spawnRadiusRange.y);
+        
         var playerPosition = GameManager.PlayerController.transform.position;
-        var randomPoint = playerPosition + Random.onUnitSphere *  Random.Range(_spawnRadiusRange.x, _spawnRadiusRange.y);
+        var randomPoint = playerPosition + new Vector3(randomOffset.x,0,randomOffset.y);
+
+        Debug.DrawLine(playerPosition,randomPoint,Color.blue, 3f);
 
         if (!NavMesh.SamplePosition(randomPoint, out var hit, _maxDistanceFromNavMesh, 1))
             return false;
         
         var spawnLocation = hit.position;
-        
+        Debug.DrawLine(playerPosition,spawnLocation,Color.green, 5f);
         
         // Spawn Enemy
-        var enemy = Instantiate(_enemyPrefab, spawnLocation, Quaternion.identity);
+        var enemy = Instantiate(GetRandomEnemy(), spawnLocation, Quaternion.identity);
         enemy.OnRemoved += OnEnemyRemoved;
         _enemies.Add(enemy);
+        Debug.Log($"Enemy Spawned: {enemy.name}");
 
         return true;
+    }
+
+    private Enemy GetRandomEnemy()
+    {
+        // Get the total weight
+        var totalWeight = 0f;        
+        for (var i = 0; i < _enemySpawnOptions.Length; i++)
+        {
+            totalWeight += _enemySpawnOptions[i].SpawnChance;
+        }
+        
+        Debug.Log(totalWeight);
+        
+        // Get a random weight based on the total
+        var randomWeight = Random.value * totalWeight;
+        
+        Debug.Log(randomWeight);
+
+        // Count up the wight until arriving at selected enemy
+        var countedWeight= 0f;
+        for (var i = 0; i < _enemySpawnOptions.Length; i++)
+        {
+            countedWeight += _enemySpawnOptions[i].SpawnChance;
+            if (randomWeight < countedWeight)
+                return _enemySpawnOptions[i].EnemyPrefeb;
+        }
+
+        return null;
     }
 
     private void OnEnemyRemoved(Enemy enemyremoved)

@@ -36,9 +36,9 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
     private void Update()
     {
+
         UpdateMovement();
         UpdateRotation();
     }
@@ -68,8 +68,8 @@ public class PlayerController : MonoBehaviour
         var targetDirection = mouseLocation - playerPosition;
         
         var targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
-        var smoothRotation = Quaternion.Slerp(_playerModelTransform.rotation, targetRotation, Time.deltaTime * _rotateSpeed);
-        _playerModelTransform.rotation = smoothRotation;
+        var smoothRotation = Quaternion.Slerp(_playerModelTransform.localRotation, targetRotation, Time.deltaTime * _rotateSpeed);
+        _playerModelTransform.localRotation = smoothRotation;
     }
 
     private void Dash()

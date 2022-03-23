@@ -30,7 +30,8 @@ public class Attributes : MonoBehaviour
         
         _health = newHealth;
         OnHealthChange?.Invoke(newHealth, delta,clampedDelta, _maxHealth, instigator);
-        Debug.Log(gameObject.name + " Health Changed: " + newHealth);
+        
+        //Debug.Log(gameObject.name + " Health Changed: " + newHealth);
 
         if (_health == 0f)
         {

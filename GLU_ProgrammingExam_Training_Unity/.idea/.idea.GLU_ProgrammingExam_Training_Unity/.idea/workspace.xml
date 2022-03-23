@@ -6,19 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="b2fec695-e0d6-43c2-beb8-8ddbbe791966" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GLU_ProgrammingExam_Training_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GLU_ProgrammingExam_Training_Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/AnimationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnimationController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/AnimationController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemy.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Projectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Projectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemyManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemy.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemy.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/AnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerAnimationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/AnimationController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerAnimationController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Attributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Attributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Projectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/QuickSearch.settings" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/QuickSearch.settings" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +32,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/EnemyManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -102,7 +102,7 @@
       <workItem from="1647860440552" duration="7896000" />
       <workItem from="1647868649139" duration="1686000" />
       <workItem from="1647974995191" duration="963000" />
-      <workItem from="1648025149152" duration="8018000" />
+      <workItem from="1648025149152" duration="18149000" />
     </task>
     <servers />
   </component>
