@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         if(_bDashing)
             return;
         
-        Vector3 targetVelocity = _movementInput * (_runSpeed * Time.deltaTime);
+        var targetVelocity = _movementInput * (_runSpeed * Time.deltaTime);
         _characterController.Move(targetVelocity);
     }
 
@@ -93,7 +93,6 @@ public class PlayerController : MonoBehaviour
         var dashDirection = _movementInput;
         
         
-        
         var alpha = 0f;
         while(true)
         {
@@ -110,33 +109,7 @@ public class PlayerController : MonoBehaviour
 
         _bDashingAllowed = true;
     }
-        
     
-    private IEnumerator ZeroToOne(Action<float> funcToExec, Action<bool> callback)
-    {
-        callback(false);
-
-        for (float rawAlpha=0, alpha=0; rawAlpha < 1f + Time.deltaTime; rawAlpha += Time.deltaTime, alpha = rawAlpha > 1f ? 1f : rawAlpha)
-        {
-            funcToExec(alpha);
-            yield return new WaitForFixedUpdate();
-        }
-
-        callback(true);
-    }
-
-    private void DoABarrelRoll(float a)
-    {
-        Debug.Log(" Hallo" + a);
-    }
-
-    private void StopBarrelRoll(bool stopping)
-    {
-        Debug.Log(stopping ? "Stopped Barrelrolling" : "Started");
-    }
-    
-    
-
     
     public void OnMovementInput(InputAction.CallbackContext context)
     {

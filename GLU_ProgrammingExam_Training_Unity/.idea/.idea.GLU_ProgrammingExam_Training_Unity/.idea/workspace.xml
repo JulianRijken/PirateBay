@@ -6,10 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="b2fec695-e0d6-43c2-beb8-8ddbbe791966" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GLU_ProgrammingExam_Training_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GLU_ProgrammingExam_Training_Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/AnimationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AnimationController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/AnimationController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemy.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Projectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Projectile.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/GameManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/GameManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Attributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Attributes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Projectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Projectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +34,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/EnemyManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -67,10 +77,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11588">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="11588" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -92,7 +102,7 @@
       <workItem from="1647860440552" duration="7896000" />
       <workItem from="1647868649139" duration="1686000" />
       <workItem from="1647974995191" duration="963000" />
-      <workItem from="1648025149152" duration="394000" />
+      <workItem from="1648025149152" duration="8018000" />
     </task>
     <servers />
   </component>

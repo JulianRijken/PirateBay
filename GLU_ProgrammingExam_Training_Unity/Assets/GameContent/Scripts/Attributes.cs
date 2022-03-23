@@ -6,11 +6,13 @@ using UnityEngine;
 public class Attributes : MonoBehaviour
 {
     
-    public delegate void OnHealthChangeEvent(float newHealth,float clampedDelta, float delta, float maxHealth);
+    public delegate void OnHealthChangeEvent(float newHealth,float clampedDelta, float delta, float maxHealth, GameObject instigator);
     public event OnHealthChangeEvent OnHealthChange;
+
+    public delegate void OnDeathEvent(GameObject instigator);
+    public event OnDeathEvent OnDeath;
     
-
-
+    
     private float _health;
     [SerializeField] private float _maxHealth;
 
@@ -19,15 +21,20 @@ public class Attributes : MonoBehaviour
         _health = _maxHealth;
     }
 
-    public void ChangeHealth(float delta)
+    public void ApplyHealthChange(float delta, GameObject instigator)
     {
-        float newHealth = _health + delta;
+        var newHealth = _health + delta;
         newHealth = Mathf.Clamp(newHealth, 0f, _maxHealth);
 
-        float clampedDelta = newHealth - _health;
+        var clampedDelta = newHealth - _health;
         
         _health = newHealth;
-        OnHealthChange?.Invoke(newHealth, delta,clampedDelta, _maxHealth);
+        OnHealthChange?.Invoke(newHealth, delta,clampedDelta, _maxHealth, instigator);
         Debug.Log(gameObject.name + " Health Changed: " + newHealth);
+
+        if (_health == 0f)
+        {
+            OnDeath?.Invoke(instigator);
+        }
     }
 }
