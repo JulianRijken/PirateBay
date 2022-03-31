@@ -5,23 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2fec695-e0d6-43c2-beb8-8ddbbe791966" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/Enemy_Mele.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/Enemy_Mele.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GLU_ProgrammingExam_Training_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GLU_ProgrammingExam_Training_Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Armor.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Armor.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Normal.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Normal.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Sprinter.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Sprinter.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Bomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Bomb.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Mele_Armor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Mele_Armor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Mele_Normal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Mele_Normal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Mele_Sprinter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Mele_Sprinter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Range.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Enemys/Enemy_Range.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemy.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/EnemyManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/EnemyManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Attributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Attributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/EnemyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/EnemyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/Enemy_Mele.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/Enemy_Mele.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerCamera.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PolygonPrototype/Materials/PolygonPrototype_Texture_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonPrototype/Materials/PolygonPrototype_Texture_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +35,11 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/Enemy_Range.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameContent/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -48,20 +50,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rider.run.widget.enabled.cache": "false",
-    "settings.editor.selected.configurable": "ReSpellerSettingsId",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ReSpellerSettingsId&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Programs\Unity\Editors\2020.3.30f1\Editor\Unity.exe" />
@@ -108,6 +110,9 @@
       <workItem from="1647974995191" duration="963000" />
       <workItem from="1648025149152" duration="18865000" />
       <workItem from="1648064418278" duration="6821000" />
+      <workItem from="1648153898173" duration="239000" />
+      <workItem from="1648714096644" duration="4069000" />
+      <workItem from="1648718364435" duration="6884000" />
     </task>
     <servers />
   </component>

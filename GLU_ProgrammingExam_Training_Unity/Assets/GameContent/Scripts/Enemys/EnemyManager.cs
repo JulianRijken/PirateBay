@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,9 +21,22 @@ public class EnemyManager : MonoBehaviour
     #endif
     
     private float _gameTime;
-    private bool _enabled = true;
     
     private List<Enemy> _enemies = new List<Enemy>();
+
+    private void Awake()
+    {
+        GameManager.OnGameStart += KillEnemys;
+        GameManager.OnGameRestart += KillEnemys;
+    }
+
+    private void KillEnemys()
+    {
+        foreach (var enemy in _enemies)
+        {
+            enemy.Die();
+        }
+    }
 
     private void Start()
     {
@@ -39,7 +53,7 @@ public class EnemyManager : MonoBehaviour
 
     private void Update()
     {
-        if(_enabled)
+        if(GameManager.IsState(GameManager.GameStateEnum.Playing))
             _gameTime += Time.deltaTime;
     }
     
@@ -54,7 +68,7 @@ public class EnemyManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitUntil(() => _enabled);
+            yield return new WaitUntil(() => GameManager.IsState(GameManager.GameStateEnum.Playing));
             
             // Wait for spawn rate
             var waitTime = _spawnIntervalCruve.Evaluate(_gameTime);
@@ -75,8 +89,11 @@ public class EnemyManager : MonoBehaviour
     {
         // Get random position
         var randomOffset = Random.insideUnitCircle *  Random.Range(_spawnRadiusRange.x, _spawnRadiusRange.y);
+
+        var player = GameManager.ActivePlayerController;
+        if (!player) return false;
         
-        var playerPosition = GameManager.PlayerController.transform.position;
+        var playerPosition = player.Location;
         var randomPoint = playerPosition + new Vector3(randomOffset.x,0,randomOffset.y);
 
         Debug.DrawLine(playerPosition,randomPoint,Color.blue, 3f);
@@ -129,9 +146,12 @@ public class EnemyManager : MonoBehaviour
         _enemies.Remove(enemyremoved);
     }
 
+    
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         var pos = Camera.main.ViewportToWorldPoint(new Vector3(0f, 0f, 0));
         Gizmos.DrawSphere(pos,1f);
     }
+    #endif
 }

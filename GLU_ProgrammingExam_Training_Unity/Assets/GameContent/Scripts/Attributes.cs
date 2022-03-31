@@ -10,7 +10,7 @@ public class Attributes : MonoBehaviour
     public event OnHealthChangeEvent OnHealthChange;
 
     public delegate void OnDeathEvent(GameObject instigator);
-    public event OnDeathEvent OnDeath;
+    public event OnDeathEvent OnHealthZero;
     
     
     private float _health;
@@ -35,7 +35,7 @@ public class Attributes : MonoBehaviour
 
         if (_health == 0f)
         {
-            OnDeath?.Invoke(instigator);
+            OnHealthZero?.Invoke(instigator);
         }
     }
 }

@@ -9,12 +9,35 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Transform[] _playerSpawnTransforms;
     [SerializeField] private PlayerController _playerPrefab;
-    private PlayerController _playerController;
+    [SerializeField] private PlayerCamera _playerCamera;
+    private PlayerController _activePlayerController;
 
     public static GameManager Instance;
 
-    public static PlayerController PlayerController => Instance._playerController;
+    public static PlayerController ActivePlayerController => Instance._activePlayerController;
 
+    private GameStateEnum _gameState = GameStateEnum.MainMenu;
+
+    public static GameStateEnum GameState => Instance._gameState;
+    
+    public static event Action OnGameStart;
+    public static event Action OnGameEnd;
+    public static event Action OnGameRestart;
+    public static event Action OnQuitToMainMenu;
+    
+    
+    public enum GameStateEnum
+    {
+        MainMenu,
+        Playing,
+        EndScreen
+    }
+
+    public static bool IsState(GameStateEnum state)
+    {
+        return Instance._gameState == state;
+    }
+    
     private void Awake()
     {
         if (Instance == null)
@@ -30,22 +53,64 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        StartGame();
+        // Force game to start in main menu
+        QuitToMainMenu();
+        Debug.Log("Forcing Game To Menu");
     }
-    
+
 
     /// <summary>
     /// Spawns the player and starts the game
     /// </summary>
-    private void StartGame()
+    public void StartGame()
+    {
+        SpawnPlayer();
+        _gameState = GameStateEnum.Playing;
+        OnGameStart?.Invoke();
+    }
+
+    /// <summary>
+    /// Ends the game
+    /// </summary>
+    public void EndGame()
+    {
+        _gameState = GameStateEnum.EndScreen;
+        OnGameEnd?.Invoke();
+    }
+    
+    /// <summary>
+    /// Brings the player back to life and restarts the game
+    /// </summary>
+    public void RestartGame()
+    {
+        Debug.LogWarning("Maybe replace with place coming back to life");
+        SpawnPlayer();
+        _gameState = GameStateEnum.Playing;
+        OnGameRestart?.Invoke();
+    }
+
+    /// <summary>
+    /// Returns the game back to the main menu
+    /// </summary>
+    public void QuitToMainMenu()
+    {
+        _gameState = GameStateEnum.MainMenu;
+        OnQuitToMainMenu?.Invoke();
+    }
+    
+    
+    
+    
+    
+    private void SpawnPlayer()
     {
         // Check if player already exists
-        PlayerController[] foundPlayerControllers = FindObjectsOfType<PlayerController>();
-        for (int i = 0; i < foundPlayerControllers.Length; i++)
+        var foundPlayerControllers = FindObjectsOfType<PlayerController>();
+        for (var i = 0; i < foundPlayerControllers.Length; i++)
         {
             if (i == 0)
             {
-                _playerController = foundPlayerControllers[i];
+                _activePlayerController = foundPlayerControllers[i];
                 continue;
             }
             
@@ -53,14 +118,21 @@ public class GameManager : MonoBehaviour
         }
         
         // If no player has been found spawn one
-        if (_playerController == null)
+        if (_activePlayerController == null)
         {
-            _playerController = Instantiate(_playerPrefab);
+            _activePlayerController = Instantiate(_playerPrefab);
+            _playerCamera.AttachToPlayer(_activePlayerController);
         }
         
         // Move Player
-        Vector3 spawnLocation = _playerSpawnTransforms[Random.Range(0, _playerSpawnTransforms.Length)].position;
-        _playerController.transform.position = spawnLocation;
-        Debug.Log("Player Spawned");
+        var spawnLocation = _playerSpawnTransforms[Random.Range(0, _playerSpawnTransforms.Length)].position;
+        _activePlayerController.transform.position = spawnLocation;
+
+        _activePlayerController.OnPlayerDeath += OnPlayerDeath;
+    }
+
+    private void OnPlayerDeath()
+    {
+        EndGame();
     }
 }

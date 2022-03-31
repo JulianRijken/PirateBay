@@ -85,6 +85,8 @@ MonoBehaviour:
   _attackDistance: 2
   _rotationSpeedWhileMoving: 3
   _rotationSpeedWhileStandingStill: 5
+  _attackBoxExtents: {x: 1, y: 1, z: 1}
+  _attackRange: 3
 --- !u!136 &6851510249927267126
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -95,7 +97,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4
+  m_Radius: 0.35
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}

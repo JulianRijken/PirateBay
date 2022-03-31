@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6479779334644734008}
   m_Layer: 0
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 734540267}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,10 +79,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f927ea53358b39046b9661e8f9103578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerCamera: {fileID: 0}
   _playerModelTransform: {fileID: 6479779334644734008}
   _weapon: {fileID: 4913275498653549615}
   _maxSpeed: 5
+  _runSpeed: 5
   _rotateSpeed: 30
   _dashCurve:
     serializedVersion: 2
@@ -119,6 +119,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   _dashTime: 0.2
   _dashSpeed: 15
+  _dashDelay: 1
+  AttachedCamera: {fileID: 0}
 --- !u!114 &5684422720972835956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,13 +145,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.3
+  m_Height: 1.8
+  m_Radius: 0.35
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.1, z: 0}
 --- !u!114 &734540267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +237,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6479779334644734008}
     m_Modifications:
+    - target: {fileID: 5865597108891611546, guid: 334d5f93f0227fb468ad66ba9ad00eb2, type: 3}
+      propertyPath: Owner
+      value: 
+      objectReference: {fileID: 4913275498070269986}
+    - target: {fileID: 5865597108891611546, guid: 334d5f93f0227fb468ad66ba9ad00eb2, type: 3}
+      propertyPath: _damage
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5865597108891611547, guid: 334d5f93f0227fb468ad66ba9ad00eb2, type: 3}
       propertyPath: m_Name
       value: Weapon
@@ -245,7 +255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5865597108891611549, guid: 334d5f93f0227fb468ad66ba9ad00eb2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.464
+      value: 0.293
       objectReference: {fileID: 0}
     - target: {fileID: 5865597108891611549, guid: 334d5f93f0227fb468ad66ba9ad00eb2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -253,7 +263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5865597108891611549, guid: 334d5f93f0227fb468ad66ba9ad00eb2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.43
+      value: 0.145
       objectReference: {fileID: 0}
     - target: {fileID: 5865597108891611549, guid: 334d5f93f0227fb468ad66ba9ad00eb2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -356,9 +366,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95242923974199034, guid: 194f8fbf67729fd40936b3465af2cc47, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8457044035737259333, guid: 194f8fbf67729fd40936b3465af2cc47, type: 3}
       propertyPath: _smoothSpeed
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 194f8fbf67729fd40936b3465af2cc47, type: 3}

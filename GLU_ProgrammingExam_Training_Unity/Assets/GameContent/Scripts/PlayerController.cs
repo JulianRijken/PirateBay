@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     
-    [SerializeField] private PlayerCamera _playerCamera;
     [SerializeField] private Transform _playerModelTransform;
     [SerializeField] private Weapon _weapon;
     [SerializeField] private float _maxSpeed;
@@ -18,29 +17,42 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _dashSpeed;
     [SerializeField] private float _dashDelay;
 
+    private Attributes _attributes;
+
     private bool _bDashingAllowed = true;
     private bool _bDashing = false;
     private Vector3 _movementInput;
     private CharacterController _characterController;
 
     public float MaxSpeed => _maxSpeed;
+    
+    [HideInInspector] public PlayerCamera AttachedCamera;
 
-
-    public delegate void OnDashEvent();
-    public event OnDashEvent OnDash;
-
-    public Vector3 Location => _playerModelTransform.position;
+    public event Action OnDash;
+    public event Action OnPlayerDeath;
+    
+    public Vector3 Location => _playerModelTransform != null ? _playerModelTransform.position : Vector3.zero;
     
     private void Awake()
     {
         //StartCoroutine(ZeroToOne(DoABarrelRoll, StopBarrelRoll));
         _characterController = GetComponent<CharacterController>();
+
+        _attributes = GetComponent<Attributes>();
+
+        _attributes.OnHealthZero += OnHealthZero;
+    }
+    
+
+    private void OnHealthZero(GameObject instigator)
+    {
+        OnPlayerDeath?.Invoke();
+        Destroy(gameObject);
     }
 
 
     private void Update()
     {
-
         UpdateMovement();
         UpdateRotation();
     }
@@ -58,10 +70,10 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateRotation()
     {
-        if(!_playerCamera)
+        if(!AttachedCamera)
             return;
 
-        var mouseLocation = _playerCamera.GetMouseInWorldSpace();
+        var mouseLocation = AttachedCamera.GetMouseInWorldSpace();
         mouseLocation.y = 0;
 
         var playerPosition = transform.position;

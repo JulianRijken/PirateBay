@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     
     [SerializeField] private Transform _model;
 
+
+
     protected float MoveSpeed
     {
         get => _agent.speed;
@@ -24,6 +26,10 @@ public class Enemy : MonoBehaviour
         get => _agent.destination;
         set => _agent.destination = value;
     }
+
+    
+    protected float DistanceFromTarget => Vector3.Distance(_model.position, TargetLocation);
+    protected float DistanceFromPlayer => Vector3.Distance(_model.position, GameManager.ActivePlayerController.Location);
 
     protected float RotateSpeed;
     protected RotateTowardsOptions TargetRotation;
@@ -53,8 +59,7 @@ public class Enemy : MonoBehaviour
         EnemyAttributes = GetComponent<Attributes>();
         _agent = GetComponent<NavMeshAgent>();
         _agent.angularSpeed = 0f;
-        
-        EnemyAttributes.OnDeath += OnDeath;
+        EnemyAttributes.OnHealthZero += OnHealthZero;
     }
 
     /// <summary>
@@ -71,9 +76,22 @@ public class Enemy : MonoBehaviour
     }
     
     
-    protected virtual void OnDeath(GameObject instigator)
+    protected virtual void OnHealthZero(GameObject instigator)
+    {
+        Die();
+    }
+
+    public void Die()
     {
         Destroy(gameObject);
+    }
+
+    protected virtual bool GetLocationAroundPlayer(float radius, float maxDistanceToFindNavMesh, out NavMeshHit hit, int areaMask = 1)
+    {
+        // Get random position
+        var randomOffset = Random.onUnitSphere *  Random.Range(radius, radius);
+        var randomPoint = GameManager.ActivePlayerController.Location + new Vector3(randomOffset.x,0,randomOffset.y);
+        return NavMesh.SamplePosition(randomPoint, out hit, maxDistanceToFindNavMesh, areaMask);
     }
 
     private void UpdateRotation()
@@ -82,7 +100,7 @@ public class Enemy : MonoBehaviour
         {
             RotateTowardsOptions.TargetLocation => GetRotationFromDirection(_model.position - TargetLocation),
             
-            RotateTowardsOptions.Player => GetRotationFromDirection(GameManager.PlayerController.Location - _model.position),
+            RotateTowardsOptions.Player => GetRotationFromDirection(GameManager.ActivePlayerController.Location - _model.position),
             
             RotateTowardsOptions.Velocity => GetRotationFromDirection(_agent.velocity),
         };
