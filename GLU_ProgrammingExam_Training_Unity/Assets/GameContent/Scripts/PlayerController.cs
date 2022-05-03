@@ -16,9 +16,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _dashTime;
     [SerializeField] private float _dashSpeed;
     [SerializeField] private float _dashDelay;
-
+    [SerializeField] private float _gravityStrength;
+    
+    [Header("Ground Check")]
+    [SerializeField] private float _groundCheckDistance;
+    [SerializeField] private float _groundedFether;
+    
     private Attributes _attributes;
 
+    private float _gravity;
     private bool _bDashingAllowed = true;
     private bool _bDashing = false;
     private Vector3 _movementInput;
@@ -32,7 +38,8 @@ public class PlayerController : MonoBehaviour
     public event Action OnPlayerDeath;
     
     public Vector3 Location => _playerModelTransform != null ? _playerModelTransform.position : Vector3.zero;
-    
+
+
     private void Awake()
     {
         //StartCoroutine(ZeroToOne(DoABarrelRoll, StopBarrelRoll));
@@ -42,29 +49,93 @@ public class PlayerController : MonoBehaviour
 
         _attributes.OnHealthZero += OnHealthZero;
     }
-    
-
-    private void OnHealthZero(GameObject instigator)
-    {
-        OnPlayerDeath?.Invoke();
-        Destroy(gameObject);
-    }
-
 
     private void Update()
     {
         UpdateMovement();
         UpdateRotation();
     }
-    
 
+    private void OnHealthZero(GameObject instigator)
+    {
+        OnPlayerDeath?.Invoke();
+        Destroy(gameObject);
+    }
     private void UpdateMovement()
     {
         if(_bDashing)
             return;
+
+        var groundCheck = GetGroundCheck();
         
-        var targetVelocity = _movementInput * (_runSpeed * Time.deltaTime);
-        _characterController.Move(targetVelocity);
+        if (groundCheck.Grounded)
+        {
+            _gravity = 0;
+        }
+        else
+        {
+            _gravity += _gravityStrength * Time.deltaTime;
+        }
+        
+       
+
+        var slopeToSteep =groundCheck.GroundAngle >= _characterController.slopeLimit; 
+        var movementDirection = slopeToSteep ? _movementInput : groundCheck.GroundRotation * _movementInput;
+        
+        
+        DebugExtension.DebugArrow(transform.position,movementDirection,Color.red);
+        
+        var targetMovement = movementDirection * _runSpeed;
+        // Add gravity
+        targetMovement.y += _gravity;
+        
+        _characterController.Move(targetMovement * Time.deltaTime);
+    }
+
+    private GroundCheck GetGroundCheck()
+    {
+        
+        var sphereOrigin = _characterController.transform.position + _characterController.center;
+        sphereOrigin.y += -_characterController.height / 2f + _characterController.radius;
+        
+        Physics.SphereCast(sphereOrigin, _characterController.radius, Vector3.down, out var hit, _groundCheckDistance);
+
+#if UNITY_EDITOR
+        // Debug sphere cast origin
+        DebugExtension.DebugWireSphere(sphereOrigin,Color.white, _characterController.radius);
+        
+        // Debug hit point
+        DebugExtension.DebugPoint(hit.point,Color.red, 0.3f);
+
+        // Debug ground hit normal
+        DebugExtension.DebugArrow(transform.position, hit.normal);
+#endif
+        
+        // Get the slope rotation
+        var slopeRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+    
+#if UNITY_EDITOR
+        // Debug movement direction over slope rotation
+        DebugExtension.DebugArrow(transform.position, slopeRotation * _movementInput);
+#endif
+
+        var grounded = hit.distance - _characterController.skinWidth < _groundedFether;
+        
+        return new GroundCheck()
+        {
+            Hit = hit,
+            GroundRotation = slopeRotation,
+            GroundAngle = Vector3.Angle(hit.normal,Vector3.up),
+            Grounded = grounded
+        };
+    }
+    
+    private struct GroundCheck
+    {
+        public RaycastHit Hit;
+        public Quaternion GroundRotation;
+        public float GroundAngle;
+        public bool Grounded;
     }
 
 

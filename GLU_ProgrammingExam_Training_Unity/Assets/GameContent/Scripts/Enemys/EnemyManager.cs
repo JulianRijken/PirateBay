@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 public class EnemyManager : MonoBehaviour
 {
 
+    [SerializeField] private bool _enabled = true;
     [SerializeField] private AnimationCurve _spawnIntervalCruve;
     [SerializeField] private AnimationCurve _maxEnemysCruve;
     [SerializeField] private SpawnOption[] _enemySpawnOptions;
@@ -75,7 +76,8 @@ public class EnemyManager : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
 
             var maxEnemys = _maxEnemysCruve.Evaluate(_gameTime);
-            if (_enemies.Count < maxEnemys)
+            
+            if (_enabled && _enemies.Count < maxEnemys)
             {
                 if (!SpawnEnemy())
                 {
