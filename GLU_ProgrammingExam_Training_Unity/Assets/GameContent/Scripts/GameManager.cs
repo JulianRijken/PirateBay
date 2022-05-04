@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
         var spawnLocation = _playerSpawnTransforms[Random.Range(0, _playerSpawnTransforms.Length)].position;
         _activePlayerController.transform.position = spawnLocation;
 
-        _activePlayerController.OnPlayerDeath += OnPlayerDeath;
+        //_activePlayerController.OnPlayerDeath += OnPlayerDeath;
     }
 
     private void OnPlayerDeath()

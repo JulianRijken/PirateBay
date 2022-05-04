@@ -82,9 +82,9 @@ public class EnemyManager : MonoBehaviour
                 if (!SpawnEnemy())
                 {
                     Debug.LogWarning("Enemy Can't be spawned");
+        }
                 }
             }
-        }
     }
 
     private bool SpawnEnemy()
