@@ -1,13 +1,11 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Components")]
-    [SerializeField] private Weapon _weapon;
     [SerializeField] public Transform _characterModelTransform;
     [HideInInspector] public PlayerCamera AttachedCamera;
 
@@ -55,9 +53,8 @@ public class PlayerController : MonoBehaviour
         public float GroundDistance;
         public Quaternion GroundRotation;
     }
-    
-    
 
+    
     private void Awake()
     {
         _attributes = GetComponent<Attributes>();
@@ -201,13 +198,11 @@ public class PlayerController : MonoBehaviour
         _movementInput =  new Vector3(inputVector.x,0,inputVector.y);
     }
 
-    public void OnFireInput(InputAction.CallbackContext context)
-    {
-        if(!context.performed)
-            return;
-
-        _weapon.Fire();
-    }
+    // public void OnFireInput(InputAction.CallbackContext context)
+    // {
+    //     if(!context.performed)
+    //         return;
+    // }
 
     public void OnDashInput(InputAction.CallbackContext context)
     {

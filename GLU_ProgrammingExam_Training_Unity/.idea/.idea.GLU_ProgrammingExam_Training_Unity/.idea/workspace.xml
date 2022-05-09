@@ -6,11 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="b2fec695-e0d6-43c2-beb8-8ddbbe791966" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GLU_ProgrammingExam_Training_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GLU_ProgrammingExam_Training_Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Animations/PlayerAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Animations/PlayerAnimator.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Weapon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Prefabs/Weapon.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/EnemyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/EnemyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerAnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerAnimationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerAnimationController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerAnimationManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PolygonPrototype/Prefabs/Characters/Character_Male_Face_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PolygonPrototype/Prefabs/Characters/Character_Male_Face_01.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
@@ -28,6 +33,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/Enemy_Range.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameContent/Scripts/MovingPlatform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -111,7 +117,9 @@
       <workItem from="1650372503101" duration="2069000" />
       <workItem from="1650793898131" duration="1144000" />
       <workItem from="1651579533509" duration="15352000" />
-      <workItem from="1651669040060" duration="2257000" />
+      <workItem from="1651669040060" duration="12191000" />
+      <workItem from="1652002711704" duration="3259000" />
+      <workItem from="1652013987353" duration="2920000" />
     </task>
     <servers />
   </component>
