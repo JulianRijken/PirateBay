@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637876254345916802
-    m_Hash: 2514597674
+      ticks: 637879404804324601
+    m_Hash: 2419613394
   m_LockFileStatus:
     m_FilePath: C:/Users/rijke/Documents/Git/GLU/GLU_ProgrammeerPvB/GLU_ProgrammeerPvB_Unity/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637876254345956829
-    m_Hash: 130028280
+      ticks: 637879404804354602
+    m_Hash: 1773880021
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -151,12 +151,12 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 2.8.4
     nextVersion: 
-- packageId: com.unity.ide.rider@3.0.14
+- packageId: com.unity.ide.rider@3.0.13
   testable: 0
   isDirectDependency: 1
-  version: 3.0.14
+  version: 3.0.13
   source: 1
-  resolvedPath: C:\Users\rijke\Documents\Git\GLU\GLU_ProgrammeerPvB\GLU_ProgrammeerPvB_Unity\Library\PackageCache\com.unity.ide.rider@3.0.14
+  resolvedPath: C:\Users\rijke\Documents\Git\GLU\GLU_ProgrammeerPvB\GLU_ProgrammeerPvB_Unity\Library\PackageCache\com.unity.ide.rider@3.0.13
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -223,13 +223,13 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637861245770000000
+  datePublishedTicks: 637837345400000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
-    revision: e6bfc84a08a0876a2c20ec2ee0883b5ece331dfd
+    revision: 26f15837ac7ebf5038274dcc39e2b79da5fcdc93
     path: 
   unityLifecycle:
     version: 3.0.13
