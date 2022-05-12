@@ -16,23 +16,10 @@ public class Cannon : MonoBehaviour
 
     [SerializeField] private float _maxRandomFireDelay;
     
-    private void Start()
+    
+    public void Fire()
     {
-        IEnumerator FireLoop()
-        {
-            while (true)
-            {
-                // Remove
-                Fire();   
-                yield return new WaitForSeconds(10);
-            }
-        }
-
-        StartCoroutine(FireLoop());
-    }
-
-    private void Fire()
-    {
+        StartCoroutine(FireEnumerator());
         StartCoroutine(FireEnumerator());
         
         IEnumerator FireEnumerator()
