@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff2adabc564fe94b8f4d05991272d00, type: 3}
+  m_Name: PlayerCannonSettings SpeedEffect
+  m_EditorClassIdentifier: 
+  _cannonBall: {fileID: 1738656262160748195, guid: 6dcd6a027fb969645963e75f6883420f, type: 3}
+  _damage: 5
+  _fireSpeedPower: 50
+  _xAngleOffsetMin: 0
+  _xAngleOffsetMax: 10
+  _yAngleOffsetMin: -4
+  _yAngleOffsetMax: 4
+  _useCannonDamage: 1
+  _maxRandomFireDelay: 0.25
+  _accuracyMultiplier: 0.01

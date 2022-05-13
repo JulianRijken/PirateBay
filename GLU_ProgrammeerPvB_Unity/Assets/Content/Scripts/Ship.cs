@@ -14,24 +14,27 @@ public class Ship : MonoBehaviour, IDamageable
     [SerializeField] protected float _maxForwardSpeed = 165f;
     [SerializeField] protected float _maxBackwardsSpeed = 30f;
     [SerializeField] protected float _accelerationSpeed = 30f;
-    [SerializeField] private AnimationCurve _turnSpeed;
+    [SerializeField] protected AnimationCurve _turnSpeed;
+    [SerializeField] protected float _turnSpeedMultiplier = 1f;
     [SerializeField] protected float _shipWobble = 2f;
     [SerializeField] protected float _shipUnFlipAngle = 50f;
     [SerializeField] protected Vector2 _shipUnFlipForce;
-    [SerializeField] private Transform _centerOfMass;
+    [SerializeField] protected Transform _centerOfMass;
     [SerializeField] protected BuoyancyEffector3D _buoyancyEffector3D;
  
     [Header("Cannons")] 
-    [SerializeField] private float _fireDelay;
-    [SerializeField] private Cannon[] _frontCannons;
-    [SerializeField] private Cannon[] _leftCannons;
-    [SerializeField] private Cannon[] _rightCannons;
-    
+    [SerializeField] protected float _fireDelay;
+    [SerializeField] protected Cannon[] _frontCannons;
+    [SerializeField] protected Cannon[] _leftCannons;
+    [SerializeField] protected Cannon[] _rightCannons;
+    [SerializeField] protected CannonSettings _cannonSettings;
     
     [SerializeField] private GameObject _shipSinkExplosionPrefab;
     [SerializeField] private MeshFilter _shipMesh;
     [SerializeField] private int _amountOfExplosions;
     [SerializeField] private float _explodeEffectSpeed;
+    [SerializeField] private float _shipSinkSpeed = 5f;
+    [SerializeField] private float _shipSinkDelay = 2f;
     
     private bool _waitingForFireDelay;
     
@@ -44,7 +47,8 @@ public class Ship : MonoBehaviour, IDamageable
 
 
     protected Action OnShipSinkEvent;
-    
+
+    public CannonSettings CannonSettings => _cannonSettings;
 
     protected virtual void Awake()
     {
@@ -91,7 +95,7 @@ public class Ship : MonoBehaviour, IDamageable
         if (!_shipSunk)
         {
             // Rotate Ship    
-            _rigidbody.AddTorque(Vector3.up * ((_moveSpeed >= 0 ? 1 : -1) * _movementInput.x * _turnSpeed.Evaluate(_moveSpeed / _maxForwardSpeed)), ForceMode.Acceleration);
+            _rigidbody.AddTorque(Vector3.up * ((_moveSpeed >= 0 ? 1 : -1) * _turnSpeedMultiplier * _movementInput.x * _turnSpeed.Evaluate(_moveSpeed / _maxForwardSpeed)), ForceMode.Acceleration);
 
             // Wobble ship in corners
             _rigidbody.AddTorque(transform.forward * (_shipWobble * Mathf.Clamp01(_movementInput.x)), ForceMode.Acceleration);
@@ -193,7 +197,7 @@ public class Ship : MonoBehaviour, IDamageable
         
         IEnumerator ShipExplodeEffect()
         {
-            if (_shipMesh.mesh.isReadable)
+            if (_shipMesh.mesh.isReadable && _shipMesh)
             {
                 for (var i = 0; i < _amountOfExplosions; i++)
                 {
@@ -207,23 +211,22 @@ public class Ship : MonoBehaviour, IDamageable
             }
             else
             {
-                Debug.LogWarning("Mesh is not readable");
+                Debug.LogWarning("Mesh is not readable or not assigned");
             }
         }
         
         IEnumerator ShipSinkEffect()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(_shipSinkDelay);
 
             var startingPower = _buoyancyEffector3D.FloatingPower;
 
 
             
-            const float time = 5f;
-            var timer = time;
+            var timer = _shipSinkSpeed;
             while (timer > 0f)
             {
-                _buoyancyEffector3D.FloatingPower = startingPower * timer / time;
+                _buoyancyEffector3D.FloatingPower = startingPower * timer / _shipSinkSpeed;
                 _rigidbody.AddTorque(transform.right * -50f * Time.deltaTime,ForceMode.Acceleration);
                 _rigidbody.AddForce(Vector3.down * 100 * Time.deltaTime, ForceMode.Acceleration);
                 timer -= Time.deltaTime;

@@ -107,19 +107,29 @@ public class EnemyShipBase : Ship
         // In range
         if (distanceFromTarget < _maximumFireDistance)
         {
-            var rightFireAngle = Vector3.Angle(transform.right, targetDirection);
-            var leftFireAngle = Vector3.Angle(-transform.right, targetDirection);
-
-            //Debug.Log("Shoot: " + rightFireAngle);
-
             var minimumAngle = Mathf.Lerp(_angleRequiredForFireClose, _angleRequiredForFireFar, distanceFromTarget / _maximumFireDistance);
             
+            
             // Fire cannons
+            
+            var rightFireAngle = Vector3.Angle(transform.right, targetDirection);
             if (rightFireAngle < minimumAngle)
+            {
                 TryFireCannons(Side.Right);
-
+            }
+     
+            var leftFireAngle = Vector3.Angle(-transform.right, targetDirection);
             if (leftFireAngle < minimumAngle)
+            {
                 TryFireCannons(Side.Left);
+            }
+       
+            var forwardFireAngle = Vector3.Angle(transform.forward, targetDirection);
+            if (forwardFireAngle < minimumAngle)
+            {
+                TryFireCannons(Side.Front);
+            }  
+            
         }
 
 

@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class CannonBall : MonoBehaviour
 {
-    [SerializeField] private float _damage = 4f;
+    [SerializeField] public float Damage = 4f;
     [SerializeField] private GameObject _explodeEffect;
     [SerializeField] private GameObject _waterEffect;
     [SerializeField] private ParticleSystem _smokeTrail;
@@ -17,6 +17,7 @@ public class CannonBall : MonoBehaviour
     {
         Rigidbody = GetComponent<Rigidbody>();
     }
+    
 
     public Rigidbody Rigidbody { get; private set; }
 
@@ -46,10 +47,7 @@ public class CannonBall : MonoBehaviour
             
             var damageableInterface = collision.gameObject.GetComponent<IDamageable>();
 
-            if (damageableInterface != null)
-            {
-                damageableInterface.OnHealthChange(-_damage);
-            }
+            damageableInterface?.OnHealthChange(-Damage);
         }
 
         // Effects
