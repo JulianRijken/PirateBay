@@ -10,7 +10,7 @@ public class PlayerShipController : Ship
     
     private Controls _controls;
 
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
         
@@ -22,8 +22,10 @@ public class PlayerShipController : Ship
     }
 
     
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+        
         _controls.Player.Enable();
     }
     
@@ -41,6 +43,6 @@ public class PlayerShipController : Ship
         
         var side = context.ReadValue<float>();
         
-        FireCannons(side > 0f ? Side.Right : Side.Left);
+        TryFireCannons(side > 0f ? Side.Right : Side.Left);
     }
 }

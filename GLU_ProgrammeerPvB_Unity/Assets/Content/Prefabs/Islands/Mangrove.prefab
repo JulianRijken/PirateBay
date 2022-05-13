@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 630571962278052045}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mangrove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,6 +239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Large_50
       objectReference: {fileID: 0}
+    - target: {fileID: 168556, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 456174, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -300,6 +304,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -363,6 +371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Rope_Fence_02
       objectReference: {fileID: 0}
+    - target: {fileID: 105890, guid: 911339a7f13acc54a9546d61196f8f4a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 451836, guid: 911339a7f13acc54a9546d61196f8f4a, type: 3}
       propertyPath: m_RootOrder
       value: 124
@@ -412,6 +424,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_36
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -475,6 +491,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_22
       objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
       value: 117
@@ -536,6 +556,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_42
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -599,6 +623,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_14
       objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -661,6 +689,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_25
       objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
       value: 114
@@ -719,6 +751,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 130250, guid: a928226c2e7c18a48b29bd9f6ce48b3a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 435840, guid: a928226c2e7c18a48b29bd9f6ce48b3a, type: 3}
       propertyPath: m_RootOrder
       value: 71
@@ -768,6 +804,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_15
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -831,6 +871,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_09
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 151
@@ -884,6 +928,10 @@ PrefabInstance:
     - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_24
+      objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
@@ -947,6 +995,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_34
       objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
       value: 50
@@ -1005,6 +1057,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 141454, guid: 4f904335d9def2445b6a8c2574de2ed6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 464822, guid: 4f904335d9def2445b6a8c2574de2ed6, type: 3}
       propertyPath: m_RootOrder
       value: 73
@@ -1054,6 +1110,10 @@ PrefabInstance:
     - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_16
+      objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
@@ -1109,6 +1169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_22
       objectReference: {fileID: 0}
+    - target: {fileID: 129968, guid: cb70b578d1fec1e4892024ee505eda1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 497614, guid: cb70b578d1fec1e4892024ee505eda1b, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1158,6 +1222,10 @@ PrefabInstance:
     - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_28
+      objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
@@ -1221,6 +1289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Large_08
       objectReference: {fileID: 0}
+    - target: {fileID: 168556, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 456174, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
       propertyPath: m_RootOrder
       value: 178
@@ -1282,6 +1354,10 @@ PrefabInstance:
     - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tree_Vines_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
@@ -1345,6 +1421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Platform_05
       objectReference: {fileID: 0}
+    - target: {fileID: 130328, guid: 5ef5077abd1dc804f91fc7053f7d7fc5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 497376, guid: 5ef5077abd1dc804f91fc7053f7d7fc5, type: 3}
       propertyPath: m_RootOrder
       value: 81
@@ -1394,6 +1474,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_46
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -1457,6 +1541,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_05
       objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
       value: 173
@@ -1518,6 +1606,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_16
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -1581,6 +1673,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Platform_11
       objectReference: {fileID: 0}
+    - target: {fileID: 115408, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 459746, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
       propertyPath: m_RootOrder
       value: 78
@@ -1630,6 +1726,10 @@ PrefabInstance:
     - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
@@ -1685,6 +1785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_11
       objectReference: {fileID: 0}
+    - target: {fileID: 171432, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 487812, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
       propertyPath: m_RootOrder
       value: 128
@@ -1734,6 +1838,10 @@ PrefabInstance:
     - target: {fileID: 147766, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tree_Large_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 147766, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 490046, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
       propertyPath: m_RootOrder
@@ -1798,6 +1906,10 @@ PrefabInstance:
       value: SM_Env_Beach_110
       objectReference: {fileID: 0}
     - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -1859,6 +1971,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 159636, guid: 2517edab04218034f93896fdb78af04d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 460432, guid: 2517edab04218034f93896fdb78af04d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1908,6 +2024,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -1971,6 +2091,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_19
       objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
       value: 156
@@ -2032,6 +2156,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_21
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -2095,6 +2223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_32
       objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2157,6 +2289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_21
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2210,6 +2346,10 @@ PrefabInstance:
     - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_Name
       value: SM_Env_Beach_111
+      objectReference: {fileID: 0}
+    - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_IsActive
@@ -2277,6 +2417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Platform_06
       objectReference: {fileID: 0}
+    - target: {fileID: 115408, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 459746, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
       propertyPath: m_RootOrder
       value: 83
@@ -2326,6 +2470,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -2389,6 +2537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_14
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2442,6 +2594,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_47
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -2501,6 +2657,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
       value: 164
@@ -2563,6 +2723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tree_Large_09
       objectReference: {fileID: 0}
+    - target: {fileID: 147782, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 436316, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
       propertyPath: m_RootOrder
       value: 101
@@ -2609,6 +2773,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -2670,6 +2838,10 @@ PrefabInstance:
     - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tree_Vines_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
@@ -2733,6 +2905,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Stairs_03
       objectReference: {fileID: 0}
+    - target: {fileID: 161358, guid: ab3836ea38115e74087a7ba11a8704e7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 474736, guid: ab3836ea38115e74087a7ba11a8704e7, type: 3}
       propertyPath: m_RootOrder
       value: 130
@@ -2783,6 +2959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Platform_09
       objectReference: {fileID: 0}
+    - target: {fileID: 130328, guid: 5ef5077abd1dc804f91fc7053f7d7fc5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 497376, guid: 5ef5077abd1dc804f91fc7053f7d7fc5, type: 3}
       propertyPath: m_RootOrder
       value: 126
@@ -2832,6 +3012,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_27
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -2895,6 +3079,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tree_Vines_12
       objectReference: {fileID: 0}
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -2957,6 +3145,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_03
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 161
@@ -3010,6 +3202,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_31
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -3073,6 +3269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Tower_04
       objectReference: {fileID: 0}
+    - target: {fileID: 185566, guid: be5b4381dc9e4814b9db55a58c8c9d30, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 423242, guid: be5b4381dc9e4814b9db55a58c8c9d30, type: 3}
       propertyPath: m_RootOrder
       value: 85
@@ -3122,6 +3322,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -3185,6 +3389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_08
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 154
@@ -3238,6 +3446,10 @@ PrefabInstance:
     - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_23
+      objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
@@ -3301,6 +3513,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Large_10
       objectReference: {fileID: 0}
+    - target: {fileID: 168556, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 456174, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
       propertyPath: m_RootOrder
       value: 145
@@ -3363,6 +3579,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_23
       objectReference: {fileID: 0}
+    - target: {fileID: 141284, guid: 90d45fff77f00204d9fb1966ba8dd1cc, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 468360, guid: 90d45fff77f00204d9fb1966ba8dd1cc, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -3409,6 +3629,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 128116, guid: 30858fd452e379a44bc22ef74ff02a0a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 415346, guid: 30858fd452e379a44bc22ef74ff02a0a, type: 3}
       propertyPath: m_RootOrder
       value: 79
@@ -3455,6 +3679,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 172296, guid: 34bbbcb578754d24782b09d5786905a9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 458228, guid: 34bbbcb578754d24782b09d5786905a9, type: 3}
       propertyPath: m_RootOrder
       value: 191
@@ -3517,6 +3745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Platform_07
       objectReference: {fileID: 0}
+    - target: {fileID: 115408, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 459746, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
       propertyPath: m_RootOrder
       value: 68
@@ -3567,6 +3799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_07
       objectReference: {fileID: 0}
+    - target: {fileID: 171432, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 487812, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
       propertyPath: m_RootOrder
       value: 135
@@ -3616,6 +3852,10 @@ PrefabInstance:
     - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
@@ -3671,6 +3911,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_05
       objectReference: {fileID: 0}
+    - target: {fileID: 171432, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 487812, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
       propertyPath: m_RootOrder
       value: 137
@@ -3720,6 +3964,10 @@ PrefabInstance:
     - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_20
+      objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
@@ -3774,6 +4022,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_37
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -3837,6 +4089,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_60
       objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -3898,6 +4154,10 @@ PrefabInstance:
     - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tree_Vines_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
@@ -3961,6 +4221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tree_Large_11
       objectReference: {fileID: 0}
+    - target: {fileID: 147782, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 436316, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
       propertyPath: m_RootOrder
       value: 99
@@ -4010,6 +4274,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_09
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -4069,6 +4337,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 130328, guid: 5ef5077abd1dc804f91fc7053f7d7fc5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 497376, guid: 5ef5077abd1dc804f91fc7053f7d7fc5, type: 3}
       propertyPath: m_RootOrder
       value: 70
@@ -4119,6 +4391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_04
       objectReference: {fileID: 0}
+    - target: {fileID: 171432, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 487812, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
       propertyPath: m_RootOrder
       value: 138
@@ -4168,6 +4444,10 @@ PrefabInstance:
     - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
@@ -4222,6 +4502,10 @@ PrefabInstance:
     - target: {fileID: 147782, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tree_Large_22
+      objectReference: {fileID: 0}
+    - target: {fileID: 147782, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 436316, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
       propertyPath: m_RootOrder
@@ -4285,6 +4569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_26
       objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
       value: 96
@@ -4346,6 +4634,10 @@ PrefabInstance:
     - target: {fileID: 147782, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tree_Large_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 147782, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 436316, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
       propertyPath: m_RootOrder
@@ -4409,6 +4701,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Platform_08
       objectReference: {fileID: 0}
+    - target: {fileID: 130328, guid: 5ef5077abd1dc804f91fc7053f7d7fc5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 497376, guid: 5ef5077abd1dc804f91fc7053f7d7fc5, type: 3}
       propertyPath: m_RootOrder
       value: 72
@@ -4459,6 +4755,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tree_Large_13
       objectReference: {fileID: 0}
+    - target: {fileID: 147782, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 436316, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
       propertyPath: m_RootOrder
       value: 97
@@ -4505,6 +4805,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 128116, guid: 30858fd452e379a44bc22ef74ff02a0a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 415346, guid: 30858fd452e379a44bc22ef74ff02a0a, type: 3}
       propertyPath: m_RootOrder
       value: 75
@@ -4554,6 +4858,10 @@ PrefabInstance:
     - target: {fileID: 149894, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Beach_31
+      objectReference: {fileID: 0}
+    - target: {fileID: 149894, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 464018, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
       propertyPath: m_RootOrder
@@ -4617,6 +4925,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_05
       objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
       value: 177
@@ -4678,6 +4990,10 @@ PrefabInstance:
     - target: {fileID: 146674, guid: 6aab6a688220bd24fb3ed0efc8a33722, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Large_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 146674, guid: 6aab6a688220bd24fb3ed0efc8a33722, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 450442, guid: 6aab6a688220bd24fb3ed0efc8a33722, type: 3}
       propertyPath: m_RootOrder
@@ -4741,6 +5057,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Beach_19
       objectReference: {fileID: 0}
+    - target: {fileID: 172296, guid: 34bbbcb578754d24782b09d5786905a9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 458228, guid: 34bbbcb578754d24782b09d5786905a9, type: 3}
       propertyPath: m_RootOrder
       value: 194
@@ -4799,6 +5119,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 177418, guid: f8ca1af5413cfec47ab975dd7f75ee74, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 415910, guid: f8ca1af5413cfec47ab975dd7f75ee74, type: 3}
       propertyPath: m_RootOrder
       value: 190
@@ -4860,6 +5184,10 @@ PrefabInstance:
     - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tree_Vines_09
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
@@ -4923,6 +5251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tree_Large_14
       objectReference: {fileID: 0}
+    - target: {fileID: 147766, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 490046, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
       propertyPath: m_RootOrder
       value: 88
@@ -4985,6 +5317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_10
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 110
@@ -5039,6 +5375,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Platform_03
       objectReference: {fileID: 0}
+    - target: {fileID: 115408, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 459746, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
       propertyPath: m_RootOrder
       value: 76
@@ -5088,6 +5428,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_30
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -5151,6 +5495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tree_Large_06
       objectReference: {fileID: 0}
+    - target: {fileID: 147782, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 436316, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
       propertyPath: m_RootOrder
       value: 108
@@ -5213,6 +5561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_10
       objectReference: {fileID: 0}
+    - target: {fileID: 157506, guid: dd6ae2241e5f82b479acab0797792f48, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 401176, guid: dd6ae2241e5f82b479acab0797792f48, type: 3}
       propertyPath: m_RootOrder
       value: 129
@@ -5262,6 +5614,10 @@ PrefabInstance:
     - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tree_Vines_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
@@ -5325,6 +5681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Platform_04
       objectReference: {fileID: 0}
+    - target: {fileID: 115408, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 459746, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
       propertyPath: m_RootOrder
       value: 74
@@ -5374,6 +5734,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_45
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -5437,6 +5801,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Large_07
       objectReference: {fileID: 0}
+    - target: {fileID: 168556, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 456174, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
       propertyPath: m_RootOrder
       value: 181
@@ -5498,6 +5866,10 @@ PrefabInstance:
     - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tree_Vines_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
@@ -5561,6 +5933,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Rope_Fence_03
       objectReference: {fileID: 0}
+    - target: {fileID: 105890, guid: 911339a7f13acc54a9546d61196f8f4a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 451836, guid: 911339a7f13acc54a9546d61196f8f4a, type: 3}
       propertyPath: m_RootOrder
       value: 123
@@ -5607,6 +5983,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
       value: 185
@@ -5668,6 +6048,10 @@ PrefabInstance:
     - target: {fileID: 141284, guid: 90d45fff77f00204d9fb1966ba8dd1cc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_26
+      objectReference: {fileID: 0}
+    - target: {fileID: 141284, guid: 90d45fff77f00204d9fb1966ba8dd1cc, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 468360, guid: 90d45fff77f00204d9fb1966ba8dd1cc, type: 3}
       propertyPath: m_RootOrder
@@ -5731,6 +6115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_38
       objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -5789,6 +6177,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -5851,6 +6243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_04
       objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
       value: 174
@@ -5909,6 +6305,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 185566, guid: be5b4381dc9e4814b9db55a58c8c9d30, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 423242, guid: be5b4381dc9e4814b9db55a58c8c9d30, type: 3}
       propertyPath: m_RootOrder
       value: 149
@@ -5959,6 +6359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Platform_03
       objectReference: {fileID: 0}
+    - target: {fileID: 115408, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 459746, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
       propertyPath: m_RootOrder
       value: 80
@@ -6008,6 +6412,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_33
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -6071,6 +6479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_06
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 157
@@ -6125,6 +6537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_23
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 42
@@ -6178,6 +6594,10 @@ PrefabInstance:
     - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_27
+      objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
@@ -6241,6 +6661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tree_Vines_15
       objectReference: {fileID: 0}
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -6303,6 +6727,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Platform_10
       objectReference: {fileID: 0}
+    - target: {fileID: 115408, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 459746, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -6352,6 +6780,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_24
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -6415,6 +6847,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_17
       objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
       value: 160
@@ -6476,6 +6912,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_35
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -6539,6 +6979,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_08
       objectReference: {fileID: 0}
+    - target: {fileID: 171432, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 487812, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
       propertyPath: m_RootOrder
       value: 133
@@ -6588,6 +7032,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_43
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -6651,6 +7099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_18
       objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
       value: 158
@@ -6713,6 +7165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_05
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 112
@@ -6766,6 +7222,10 @@ PrefabInstance:
     - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_Name
       value: SM_Env_Beach_29
+      objectReference: {fileID: 0}
+    - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 445726, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_RootOrder
@@ -6828,6 +7288,10 @@ PrefabInstance:
     - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_Name
       value: SM_Env_Beach_108
+      objectReference: {fileID: 0}
+    - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_IsActive
@@ -6895,6 +7359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_06
       objectReference: {fileID: 0}
+    - target: {fileID: 171432, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 487812, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
       propertyPath: m_RootOrder
       value: 136
@@ -6944,6 +7412,10 @@ PrefabInstance:
     - target: {fileID: 149894, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Beach_32
+      objectReference: {fileID: 0}
+    - target: {fileID: 149894, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 464018, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
       propertyPath: m_RootOrder
@@ -7007,6 +7479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tree_Large_08
       objectReference: {fileID: 0}
+    - target: {fileID: 147766, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 490046, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
       propertyPath: m_RootOrder
       value: 107
@@ -7065,6 +7541,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 128116, guid: 30858fd452e379a44bc22ef74ff02a0a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 415346, guid: 30858fd452e379a44bc22ef74ff02a0a, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -7111,6 +7591,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 161358, guid: ab3836ea38115e74087a7ba11a8704e7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 474736, guid: ab3836ea38115e74087a7ba11a8704e7, type: 3}
       propertyPath: m_RootOrder
       value: 132
@@ -7160,6 +7644,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -7223,6 +7711,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_24
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -7277,6 +7769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_13
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 67
@@ -7330,6 +7826,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_25
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -7389,6 +7889,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 130250, guid: a928226c2e7c18a48b29bd9f6ce48b3a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 435840, guid: a928226c2e7c18a48b29bd9f6ce48b3a, type: 3}
       propertyPath: m_RootOrder
       value: 69
@@ -7438,6 +7942,10 @@ PrefabInstance:
     - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_21
+      objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
@@ -7501,6 +8009,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_17
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 58
@@ -7554,6 +8066,10 @@ PrefabInstance:
     - target: {fileID: 168556, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Large_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 168556, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 456174, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
       propertyPath: m_RootOrder
@@ -7617,6 +8133,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tree_Large_15
       objectReference: {fileID: 0}
+    - target: {fileID: 147766, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 490046, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
       propertyPath: m_RootOrder
       value: 87
@@ -7678,6 +8198,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_29
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -7741,6 +8265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_04
       objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
       value: 182
@@ -7802,6 +8330,10 @@ PrefabInstance:
     - target: {fileID: 147766, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tree_Large_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 147766, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 490046, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
       propertyPath: m_RootOrder
@@ -7865,6 +8397,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_09
       objectReference: {fileID: 0}
+    - target: {fileID: 157506, guid: dd6ae2241e5f82b479acab0797792f48, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 401176, guid: dd6ae2241e5f82b479acab0797792f48, type: 3}
       propertyPath: m_RootOrder
       value: 131
@@ -7915,6 +8451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Platform_02
       objectReference: {fileID: 0}
+    - target: {fileID: 130328, guid: 5ef5077abd1dc804f91fc7053f7d7fc5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 497376, guid: 5ef5077abd1dc804f91fc7053f7d7fc5, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -7964,6 +8504,10 @@ PrefabInstance:
     - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_Name
       value: SM_Env_Beach_109
+      objectReference: {fileID: 0}
+    - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_IsActive
@@ -8031,6 +8575,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_11
       objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
       value: 168
@@ -8089,6 +8637,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 157506, guid: dd6ae2241e5f82b479acab0797792f48, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 401176, guid: dd6ae2241e5f82b479acab0797792f48, type: 3}
       propertyPath: m_RootOrder
       value: 141
@@ -8139,6 +8691,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_25
       objectReference: {fileID: 0}
+    - target: {fileID: 129968, guid: cb70b578d1fec1e4892024ee505eda1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 497614, guid: cb70b578d1fec1e4892024ee505eda1b, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -8188,6 +8744,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_20
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -8251,6 +8811,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_21
       objectReference: {fileID: 0}
+    - target: {fileID: 141284, guid: 90d45fff77f00204d9fb1966ba8dd1cc, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 468360, guid: 90d45fff77f00204d9fb1966ba8dd1cc, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -8300,6 +8864,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_22
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -8363,6 +8931,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_40
       objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -8424,6 +8996,10 @@ PrefabInstance:
     - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_19
+      objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
@@ -8487,6 +9063,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_15
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 62
@@ -8540,6 +9120,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_41
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -8603,6 +9187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_59
       objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -8661,6 +9249,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 147782, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 436316, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
       propertyPath: m_RootOrder
       value: 179
@@ -8710,6 +9302,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_28
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -8773,6 +9369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_18
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -8826,6 +9426,10 @@ PrefabInstance:
     - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_15
+      objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
@@ -8885,6 +9489,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 127616, guid: ce0772d589abf964f968097bb53fb222, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 455676, guid: ce0772d589abf964f968097bb53fb222, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -8934,6 +9542,10 @@ PrefabInstance:
     - target: {fileID: 168556, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Large_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 168556, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 456174, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
       propertyPath: m_RootOrder
@@ -8997,6 +9609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tree_Vines_13
       objectReference: {fileID: 0}
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -9058,6 +9674,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_23
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -9121,6 +9741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_11
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 92
@@ -9175,6 +9799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_03
       objectReference: {fileID: 0}
+    - target: {fileID: 157506, guid: dd6ae2241e5f82b479acab0797792f48, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 401176, guid: dd6ae2241e5f82b479acab0797792f48, type: 3}
       propertyPath: m_RootOrder
       value: 139
@@ -9224,6 +9852,10 @@ PrefabInstance:
     - target: {fileID: 129968, guid: cb70b578d1fec1e4892024ee505eda1b, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_27
+      objectReference: {fileID: 0}
+    - target: {fileID: 129968, guid: cb70b578d1fec1e4892024ee505eda1b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 497614, guid: cb70b578d1fec1e4892024ee505eda1b, type: 3}
       propertyPath: m_RootOrder
@@ -9287,6 +9919,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tree_Large_10
       objectReference: {fileID: 0}
+    - target: {fileID: 147766, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 490046, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
       propertyPath: m_RootOrder
       value: 100
@@ -9349,6 +9985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_48
       objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
       value: 43
@@ -9407,6 +10047,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 141454, guid: 4f904335d9def2445b6a8c2574de2ed6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 464822, guid: 4f904335d9def2445b6a8c2574de2ed6, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -9456,6 +10100,10 @@ PrefabInstance:
     - target: {fileID: 157506, guid: dd6ae2241e5f82b479acab0797792f48, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 157506, guid: dd6ae2241e5f82b479acab0797792f48, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 401176, guid: dd6ae2241e5f82b479acab0797792f48, type: 3}
       propertyPath: m_RootOrder
@@ -9507,6 +10155,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_22
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -9557,6 +10209,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 141454, guid: 4f904335d9def2445b6a8c2574de2ed6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 464822, guid: 4f904335d9def2445b6a8c2574de2ed6, type: 3}
       propertyPath: m_RootOrder
       value: 82
@@ -9603,6 +10259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 130250, guid: a928226c2e7c18a48b29bd9f6ce48b3a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 435840, guid: a928226c2e7c18a48b29bd9f6ce48b3a, type: 3}
       propertyPath: m_RootOrder
       value: 84
@@ -9652,6 +10312,10 @@ PrefabInstance:
     - target: {fileID: 148880, guid: 6a5d8007640b9c54882d28cef24b33ff, type: 3}
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Stairs_Curved_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 148880, guid: 6a5d8007640b9c54882d28cef24b33ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 411274, guid: 6a5d8007640b9c54882d28cef24b33ff, type: 3}
       propertyPath: m_RootOrder
@@ -9706,6 +10370,10 @@ PrefabInstance:
     - target: {fileID: 175828, guid: e0c965224454eb34e84586d6fe313eae, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_20
+      objectReference: {fileID: 0}
+    - target: {fileID: 175828, guid: e0c965224454eb34e84586d6fe313eae, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 421944, guid: e0c965224454eb34e84586d6fe313eae, type: 3}
       propertyPath: m_RootOrder
@@ -9769,6 +10437,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_03
       objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
       value: 175
@@ -9831,6 +10503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_04
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 159
@@ -9881,6 +10557,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -9942,6 +10622,10 @@ PrefabInstance:
     - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_Name
       value: SM_Env_Beach_106
+      objectReference: {fileID: 0}
+    - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_IsActive
@@ -10009,6 +10693,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_16
       objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
       value: 148
@@ -10071,6 +10759,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Roots_19
       objectReference: {fileID: 0}
+    - target: {fileID: 171108, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 429314, guid: 587533877fcb5c946b9b4aff4e2a3bae, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -10124,6 +10816,10 @@ PrefabInstance:
     - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_18
+      objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
@@ -10187,6 +10883,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Beach_26
       objectReference: {fileID: 0}
+    - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 445726, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_RootOrder
       value: 186
@@ -10249,6 +10949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Beach_27
       objectReference: {fileID: 0}
+    - target: {fileID: 149894, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 464018, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
       propertyPath: m_RootOrder
       value: 94
@@ -10307,6 +11011,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 171432, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 487812, guid: 9e382901883a3a7489d7004431ebdffe, type: 3}
       propertyPath: m_RootOrder
       value: 140
@@ -10353,6 +11061,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 148880, guid: 6a5d8007640b9c54882d28cef24b33ff, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 411274, guid: 6a5d8007640b9c54882d28cef24b33ff, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -10399,6 +11111,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 147766, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 490046, guid: 5020b8d7aa9cd7a46a242706ea6cdcb9, type: 3}
       propertyPath: m_RootOrder
       value: 180
@@ -10449,6 +11165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bld_Rickety_Dock_Platform_03
       objectReference: {fileID: 0}
+    - target: {fileID: 115408, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 459746, guid: 5af47ec0ed24a954cbd9f00d841a6107, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -10498,6 +11218,10 @@ PrefabInstance:
     - target: {fileID: 149894, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Beach_34
+      objectReference: {fileID: 0}
+    - target: {fileID: 149894, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 464018, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
       propertyPath: m_RootOrder
@@ -10561,6 +11285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Large_09
       objectReference: {fileID: 0}
+    - target: {fileID: 168556, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 456174, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
       propertyPath: m_RootOrder
       value: 146
@@ -10622,6 +11350,10 @@ PrefabInstance:
     - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_44
+      objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
@@ -10685,6 +11417,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tree_Large_12
       objectReference: {fileID: 0}
+    - target: {fileID: 147782, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 436316, guid: 321738444332ed24e8d7fc0d1ef11e00, type: 3}
       propertyPath: m_RootOrder
       value: 98
@@ -10734,6 +11470,10 @@ PrefabInstance:
     - target: {fileID: 149894, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Beach_33
+      objectReference: {fileID: 0}
+    - target: {fileID: 149894, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 464018, guid: aa20fb1f8fc0c534b9ece3c761be15f1, type: 3}
       propertyPath: m_RootOrder
@@ -10797,6 +11537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Beach_07
       objectReference: {fileID: 0}
+    - target: {fileID: 172296, guid: 34bbbcb578754d24782b09d5786905a9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 458228, guid: 34bbbcb578754d24782b09d5786905a9, type: 3}
       propertyPath: m_RootOrder
       value: 188
@@ -10858,6 +11602,10 @@ PrefabInstance:
     - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_26
+      objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
@@ -10921,6 +11669,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Large_06
       objectReference: {fileID: 0}
+    - target: {fileID: 168556, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 456174, guid: 5bc229dfc40d9ae47be77c071dfa4e08, type: 3}
       propertyPath: m_RootOrder
       value: 183
@@ -10982,6 +11734,10 @@ PrefabInstance:
     - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_Name
       value: SM_Env_Beach_107
+      objectReference: {fileID: 0}
+    - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 121640, guid: 2e125cab6d871274396100e655d03414, type: 3}
       propertyPath: m_IsActive
@@ -11049,6 +11805,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_12
       objectReference: {fileID: 0}
+    - target: {fileID: 132014, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495504, guid: 16b19d5b7b2ae024bab41e01ee8a37c5, type: 3}
       propertyPath: m_RootOrder
       value: 167
@@ -11110,6 +11870,10 @@ PrefabInstance:
     - target: {fileID: 177418, guid: f8ca1af5413cfec47ab975dd7f75ee74, type: 3}
       propertyPath: m_Name
       value: SM_Env_Beach_25
+      objectReference: {fileID: 0}
+    - target: {fileID: 177418, guid: f8ca1af5413cfec47ab975dd7f75ee74, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 415910, guid: f8ca1af5413cfec47ab975dd7f75ee74, type: 3}
       propertyPath: m_RootOrder
@@ -11173,6 +11937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Mangrove_Tree_39
       objectReference: {fileID: 0}
+    - target: {fileID: 151648, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 495546, guid: 5e7b6b95fb6b328478f2ffbc8cf7f9e5, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -11231,6 +11999,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 105890, guid: 911339a7f13acc54a9546d61196f8f4a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 451836, guid: 911339a7f13acc54a9546d61196f8f4a, type: 3}
       propertyPath: m_RootOrder
       value: 125
@@ -11281,6 +12053,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_24
       objectReference: {fileID: 0}
+    - target: {fileID: 141284, guid: 90d45fff77f00204d9fb1966ba8dd1cc, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 468360, guid: 90d45fff77f00204d9fb1966ba8dd1cc, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -11327,6 +12103,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630571962278052045}
     m_Modifications:
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -11389,6 +12169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Rock_Huge_17
       objectReference: {fileID: 0}
+    - target: {fileID: 154830, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 416180, guid: b2422d159a2884643ba9d94d7a1c57de, type: 3}
       propertyPath: m_RootOrder
       value: 147
@@ -11450,6 +12234,10 @@ PrefabInstance:
     - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tree_Vines_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 122462, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 468114, guid: 7a0f2da323bd14e478d9c20dfb5dad6a, type: 3}
       propertyPath: m_RootOrder

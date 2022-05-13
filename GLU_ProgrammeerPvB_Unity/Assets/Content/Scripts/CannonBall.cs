@@ -42,6 +42,8 @@ public class CannonBall : MonoBehaviour
 
         if (collision != null)
         {
+            Debug.Log(collision.gameObject.name);
+            
             var damageableInterface = collision.gameObject.GetComponent<IDamageable>();
 
             if (damageableInterface != null)
@@ -53,6 +55,7 @@ public class CannonBall : MonoBehaviour
         // Effects
         _hit = true;
         Destroy(Instantiate(water ? _waterEffect : _explodeEffect, transform.position, transform.rotation), 5f);
+        Destroy(gameObject, 5f);
         Rigidbody.drag = 5f;
         _smokeTrail.Stop();
     }

@@ -19,7 +19,7 @@ public class Cannon : MonoBehaviour
     
     public void Fire()
     {
-        StartCoroutine(FireEnumerator());
+        StopCoroutine(FireEnumerator());
         StartCoroutine(FireEnumerator());
         
         IEnumerator FireEnumerator()

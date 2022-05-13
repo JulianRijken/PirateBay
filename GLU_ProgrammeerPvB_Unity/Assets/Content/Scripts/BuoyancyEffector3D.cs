@@ -8,7 +8,7 @@ public class BuoyancyEffector3D : MonoBehaviour
     
     [SerializeField] private Transform[] _floatingPoints;
     [SerializeField] private float _waterHeight = 0f;
-    [SerializeField] private float _floatingPower;
+    [SerializeField] public float FloatingPower;
     
     [SerializeField] private float _underWaterDrag = 5f;
     [SerializeField] private float _underWaterAngularDrag = 2f;
@@ -45,7 +45,7 @@ public class BuoyancyEffector3D : MonoBehaviour
             if (waterDifference < 0)
             {
                 
-                _rigidbody.AddForceAtPosition(Vector3.up * _floatingPower * Mathf.Abs(waterDifference), floatingPoint.position, ForceMode.Force);
+                _rigidbody.AddForceAtPosition(Vector3.up * FloatingPower * Mathf.Abs(waterDifference), floatingPoint.position, ForceMode.Force);
 
                 if (_underwater) 
                     continue;

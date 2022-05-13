@@ -1,54 +1,72 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Ship : MonoBehaviour, IDamageable
 {
+
+    [Header("Health")]
     [SerializeField] protected float _shipMaxHealth;
-    
-    
-    [SerializeField] protected float _maxForwardSpeed = 180f;
+
+    [Header("Movement")]
+    [SerializeField] protected float _maxForwardSpeed = 165f;
     [SerializeField] protected float _maxBackwardsSpeed = 30f;
     [SerializeField] protected float _accelerationSpeed = 30f;
-    [SerializeField] protected float _rotationSpeed = 2f;
+    [SerializeField] private AnimationCurve _turnSpeed;
     [SerializeField] protected float _shipWobble = 2f;
     [SerializeField] protected float _shipUnFlipAngle = 50f;
     [SerializeField] protected Vector2 _shipUnFlipForce;
+    [SerializeField] private Transform _centerOfMass;
     [SerializeField] protected BuoyancyEffector3D _buoyancyEffector3D;
-
-
+ 
     [Header("Cannons")] 
     [SerializeField] private float _fireDelay;
-    [SerializeField] private bool _waitingForFireDelay;
     [SerializeField] private Cannon[] _frontCannons;
     [SerializeField] private Cannon[] _leftCannons;
     [SerializeField] private Cannon[] _rightCannons;
     
+    
+    [SerializeField] private GameObject _shipSinkExplosionPrefab;
+    [SerializeField] private MeshFilter _shipMesh;
+    [SerializeField] private int _amountOfExplosions;
+    [SerializeField] private float _explodeEffectSpeed;
+    
+    private bool _waitingForFireDelay;
+    
     protected float _moveSpeed = 0f;
     protected float _shipHealth = 0f;
+    protected bool _shipSunk = false;
     protected Vector2 _movementInput = Vector2.zero;
     
     private Rigidbody _rigidbody;
 
 
-    protected Action OnShipSink;
+    protected Action OnShipSinkEvent;
     
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _shipMaxHealth = _shipHealth;
+        _shipHealth = _shipMaxHealth;
     }
-    
-    
-    protected void Update()
+
+    protected virtual void Start()
+    {
+        if (_centerOfMass)
+        {
+            _rigidbody.centerOfMass = _centerOfMass.localPosition;
+            Debug.Log(_rigidbody.centerOfMass);
+        }
+    }
+
+    protected virtual void Update()
     {
         HandleShipMoveSpeed();
     }
 
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         FixedHandleUnFlippingShip();
         FixedHandleShipMovement();
@@ -56,7 +74,7 @@ public class Ship : MonoBehaviour, IDamageable
 
     private void HandleShipMoveSpeed()
     {
-        var targetSpeed = _maxBackwardsSpeed * _movementInput.y > 0 ? _movementInput.y * _maxForwardSpeed : _movementInput.y * _maxBackwardsSpeed;
+        var targetSpeed = _shipSunk ? 0f : _maxBackwardsSpeed * _movementInput.y > 0 ? _movementInput.y * _maxForwardSpeed : _movementInput.y * _maxBackwardsSpeed;
         _moveSpeed = Mathf.MoveTowards(_moveSpeed, targetSpeed, Time.deltaTime * _accelerationSpeed);
     }
     
@@ -69,16 +87,22 @@ public class Ship : MonoBehaviour, IDamageable
         var direction = transform.forward;
         direction.y = 0;
         _rigidbody.AddForce(direction * _moveSpeed, ForceMode.Acceleration);
-    
-        // Rotate Ship    
-        _rigidbody.AddTorque(Vector3.up * (_rotationSpeed * (_moveSpeed > 0 ? 1 : -1) * _movementInput.x), ForceMode.Acceleration);
-        
-        // Wobble ship in corners
-        _rigidbody.AddTorque(transform.forward * _shipWobble * _movementInput.x, ForceMode.Acceleration);
+
+        if (!_shipSunk)
+        {
+            // Rotate Ship    
+            _rigidbody.AddTorque(Vector3.up * ((_moveSpeed >= 0 ? 1 : -1) * _movementInput.x * _turnSpeed.Evaluate(_moveSpeed / _maxForwardSpeed)), ForceMode.Acceleration);
+
+            // Wobble ship in corners
+            _rigidbody.AddTorque(transform.forward * (_shipWobble * Mathf.Clamp01(_movementInput.x)), ForceMode.Acceleration);
+        }
     }
 
     private void FixedHandleUnFlippingShip()
     {
+        if (_shipSunk)
+            return;
+        
         var flippedAngle = (1f - (transform.up.y + 1f) / 2f) * 360;
         var unFlipForce =  Mathf.Max(0,(flippedAngle - _shipUnFlipAngle) / (360 - _shipUnFlipAngle));
         
@@ -90,8 +114,11 @@ public class Ship : MonoBehaviour, IDamageable
         }
     }
 
-    protected void FireCannons(Side fireSide)
+    protected void TryFireCannons(Side fireSide)
     {
+        if(_shipSunk)
+            return;
+        
         if(_waitingForFireDelay)
             return;
         
@@ -119,12 +146,17 @@ public class Ship : MonoBehaviour, IDamageable
             cannon.Fire();
         }
 
-        IEnumerable AddFireDelay()
-        {
-            yield return new WaitForSeconds(_fireDelay);
-        }
+        StartCoroutine(AddFireDelay());
         
+        IEnumerator AddFireDelay()
+        {
+            _waitingForFireDelay = true;
+            yield return new WaitForSeconds(_fireDelay);
+            _waitingForFireDelay = false;
+        }
     }
+    
+
 
     protected enum Side
     { 
@@ -133,9 +165,71 @@ public class Ship : MonoBehaviour, IDamageable
         Front
     }
 
-    public void OnHealthChange(float delta)
+    public virtual void OnHealthChange(float delta)
     {
+        // Check if the ship has not already sunk
+        if(_shipSunk)
+            return;
+        
         _shipHealth += delta;
-        Debug.Log(delta);
+        Debug.Log($"name: {gameObject.name}, health change: {delta}, current health: {_shipHealth}");
+        
+        if (_shipHealth < 0f)
+        {
+            SinkShip();
+        }
     }
+
+    protected virtual void SinkShip()
+    {
+        Debug.Log($"Ship sunk: {gameObject.name}");
+        
+        _shipSunk = true;
+        OnShipSinkEvent?.Invoke();
+
+        
+        StartCoroutine(ShipSinkEffect());
+        StartCoroutine(ShipExplodeEffect());
+        
+        IEnumerator ShipExplodeEffect()
+        {
+            if (_shipMesh.mesh.isReadable)
+            {
+                for (var i = 0; i < _amountOfExplosions; i++)
+                {
+                    var vertices = _shipMesh.mesh.vertices;
+                    var randomPoint = _shipMesh.transform.TransformPoint(vertices[Random.Range(0, vertices.Length)]);
+
+                    Destroy(Instantiate(_shipSinkExplosionPrefab, randomPoint, transform.rotation), 5f);
+
+                    yield return new WaitForSeconds(Random.value * _explodeEffectSpeed);
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Mesh is not readable");
+            }
+        }
+        
+        IEnumerator ShipSinkEffect()
+        {
+            yield return new WaitForSeconds(2f);
+
+            var startingPower = _buoyancyEffector3D.FloatingPower;
+
+
+            
+            const float time = 5f;
+            var timer = time;
+            while (timer > 0f)
+            {
+                _buoyancyEffector3D.FloatingPower = startingPower * timer / time;
+                _rigidbody.AddTorque(transform.right * -50f * Time.deltaTime,ForceMode.Acceleration);
+                _rigidbody.AddForce(Vector3.down * 100 * Time.deltaTime, ForceMode.Acceleration);
+                timer -= Time.deltaTime;
+                yield return null;
+            } 
+        }
+    }
+    
 }
