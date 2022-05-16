@@ -13,18 +13,18 @@ public class PlayerShipController : Ship, ICanPickup
     private bool _hasEffect = false;
     private Effect _effect;
 
+    private DefaultSettings _defaultSettings;
     
-    // Speed effect
+
     [Header("Speed Effect")] 
-    [SerializeField] [Range(1f,10f)] private float _speedEffectSpeedMultiplier;
-    [SerializeField] [Range(1f,10f)] private float _speedEffectAccelerationMultiplier;
-    [SerializeField] [Range(1f,10f)] private float _speedEffectTurnMultiplier;
-    [SerializeField] private CannonSettings _speedEffectCannonSettings;
-    private CannonSettings _defaultCannonSettings;
+    [SerializeField] private SpeedSettings _speedSettings;
     
-    // Attack effect
+    [Header("Attack Effect")] 
+    [SerializeField] private AttackSettings _attackSettings;
+
+    [Header("Attack Effect")] 
+    [SerializeField] private HealSettings _healSettings;
     
-    // Heal effect
     
     protected override void Awake()
     {
@@ -35,15 +35,20 @@ public class PlayerShipController : Ship, ICanPickup
         _controls.Player.Move.canceled += OnMovementInput;
 
         _controls.Player.Shoot.performed += OnShootInput;
-
-        _defaultCannonSettings = _cannonSettings;
+        
     }
     
     protected override void Start()
     {
         base.Start();
         
-        _controls.Player.Enable();
+        _defaultSettings = new DefaultSettings()
+        {
+            CannonAccuracy = _cannonAccuracy,
+            AttackDamage = _attackDamage,
+            MaxForwardSpeed = _maxForwardSpeed,
+            FireAllowedDelay = _fireAllowedDelay
+        };
     }
 
     protected override void Update()
@@ -60,52 +65,69 @@ public class PlayerShipController : Ship, ICanPickup
         }
     }
 
+
+    public void SetControlsEnabled(bool enabled)
+    {
+        if(enabled)
+            _controls.Enable();
+        else
+            _controls.Disable();
+    }
     
     private void SetEffect(Effect effect)
     {
         switch (effect.EffectType)
         {
             case EffectType.Speed:
-                _maxForwardSpeed *= _speedEffectSpeedMultiplier;
-                _accelerationSpeed *= _speedEffectAccelerationMultiplier;
-                _turnSpeedMultiplier *= _speedEffectTurnMultiplier;
-                _cannonSettings = _speedEffectCannonSettings;
-
-
+                _maxForwardSpeed *= _speedSettings.SpeedMultiplier;
+                _accelerationSpeed *= _speedSettings.AccelerationMultiplier;
+                _turnSpeedMultiplier *= _speedSettings.TurnMultiplier;
+                _cannonAccuracy = _speedSettings.CannonAccuracy;
+                
                 break;
             case EffectType.Attack:
+                _maxForwardSpeed = _attackSettings.MaxForwardSpeed;
+                _attackDamage = _attackSettings.AttackDamage;
+                _fireAllowedDelay = _attackSettings.FireAllowedDelay;
                 
                 break;
             case EffectType.Heal:
                 
+                // Remove the max health based on how much the player healed 
+                var healDelta = _shipMaxHealth - _shipHealth;
+                _shipMaxHealth -= healDelta - healDelta * _healSettings.RegainPercentage;
+                
+                // Apply new health
+                _shipHealth = _shipMaxHealth;
+
                 break;
         }
-        
+
+        _effect = effect;
         _effectTimeLeft = effect.EffectDuration;
         _hasEffect = true;
     }
 
     private void RemoveEffect(Effect effect)
     {
-        Debug.LogWarning("Should be removed or changed for obvious reasons");
+        Debug.LogWarning("Multiply should be removed or changed because of wrong resetting of values (maybe)");
 
         switch (effect.EffectType)
         {
             case EffectType.Speed:
                 
-                _maxForwardSpeed /= _speedEffectSpeedMultiplier;
-                _accelerationSpeed /= _speedEffectAccelerationMultiplier;
-                _turnSpeedMultiplier /= _speedEffectTurnMultiplier;
-                _cannonSettings = _defaultCannonSettings;
+                _maxForwardSpeed /= _speedSettings.SpeedMultiplier;
+                _accelerationSpeed /= _speedSettings.AccelerationMultiplier;
+                _turnSpeedMultiplier /= _speedSettings.TurnMultiplier;
+                _cannonAccuracy = _defaultSettings.CannonAccuracy;
                 
                 break;
             case EffectType.Attack:
-                
+                _maxForwardSpeed = _defaultSettings.MaxForwardSpeed;
+                _attackDamage = _defaultSettings.AttackDamage;
+                _fireAllowedDelay = _defaultSettings.FireAllowedDelay;
+                Debug.Log("Reset: " + _defaultSettings.FireAllowedDelay);
                 break;
-            case EffectType.Heal:
-                
-                break;
-            
         }
         
         
@@ -121,8 +143,6 @@ public class PlayerShipController : Ship, ICanPickup
         SetEffect(effect);
     }
 
-    
-    
     
     
     
@@ -148,5 +168,35 @@ public class PlayerShipController : Ship, ICanPickup
         
         TryFireCannons(side > 0f ? Side.Right : Side.Left);
     }
+    
+    private struct DefaultSettings
+    {
+        public Vector2 CannonAccuracy;
+        public float AttackDamage;
+        public float MaxForwardSpeed;
+        public float FireAllowedDelay;
+    }
 
+    [Serializable]
+    private struct SpeedSettings
+    {
+        [Range(1f,10f)] public float SpeedMultiplier;
+        [Range(1f,10f)] public float AccelerationMultiplier;
+        [Range(1f,10f)] public float TurnMultiplier;
+        public Vector2 CannonAccuracy;
+    }
+    
+    [Serializable]
+    private struct AttackSettings
+    {
+        public float AttackDamage;
+        public float MaxForwardSpeed;
+        public float FireAllowedDelay;
+    }
+    
+    [Serializable]
+    private struct HealSettings
+    {
+        public float RegainPercentage;
+    }
 }

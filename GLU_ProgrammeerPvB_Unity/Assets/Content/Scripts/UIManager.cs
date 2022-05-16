@@ -5,37 +5,67 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public Action OnStartButtonPressed;
-    public Action OnRetryGameButtonPressed;
-    public Action OnExitToMainMenuButtonPressed;
+    public static Action OnStartButtonPressed;
+    public static Action OnRetryGameButtonPressed;
+    public static Action OnExitToMainMenuButtonPressed;
+    
+    [SerializeField] private GameObject _mainMenuScreen;
+    [SerializeField] private GameObject _endScreen;
+    [SerializeField] private GameObject _GUI;
+    
+    [SerializeField] private GameObject _controlsScreen;
+    
 
-
-    public void InvokeOnStartButtonPressed()
+    private void Awake()
     {
-        OnStartButtonPressed?.Invoke();
-
+        GameManager.OnGameStart += OnGameStart;
     }
 
-    public void InvokeOnRetryGameButtonPressed()
+    private void SetScreenActive(GameObject activeScreen)
+    {
+        _mainMenuScreen.SetActive(false);
+        _GUI.SetActive(false);
+        _endScreen.SetActive(false);
+        
+        activeScreen.SetActive(true);
+    }
+
+    private void OnGameStart()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        SetScreenActive(_GUI);
+    }
+
+
+    public void PressStartButton()
+    {
+        OnStartButtonPressed?.Invoke();
+    }
+
+    public void PressRetryButton()
     {
         OnRetryGameButtonPressed?.Invoke();
     }
     
-    public void InvokeOnExitToMainMenuButtonPressed()
+    public void PressExitToMainMenuButton()
     {
         OnExitToMainMenuButtonPressed?.Invoke();
     }
 
 
+    
+    
 
-    public void OnShowControlsScreenButtonPressed()
+    public void PressControlsButton()
     {
-
+        _controlsScreen.SetActive(true);
     }
 
-    public void OnHideControlsScreenButtonPressed()
+    public void PressHideControlsButton()
     {
-
+        _controlsScreen.SetActive(false);
     }
 
 }

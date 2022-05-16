@@ -1,67 +1,97 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
-
-    private OutpostIsland[] _outpostIslands;
-    public static OutpostIsland[] OutpostIslands => Instance._outpostIslands;
     
+    [SerializeField] private PlayerShipController _player;
+    [SerializeField] private CinemachineFreeLook _playerCamera;
+    
+    private OutpostIsland[] _outpostIslands;
     private TreasureIsland[] _treasureIslands;
+    private OutpostIsland _mainMenuIsland;
+
+    public static PlayerShipController Player => Instance._player;
+    public static OutpostIsland[] OutpostIslands => Instance._outpostIslands;
     public static TreasureIsland[] TreasureIslands => Instance._treasureIslands;
     
     public static GameManager Instance { get; private set; }
 
 
-    private OutpostIsland _mainMenuIsland;
+    public static Action OnGameStart;
 
-    public Action OnGameStarted;
-    public Action OnGameOver;
-
-    
     private void Awake()
     {
         Instance = this;
+
+        if (_player == null)
+        {
+            _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShipController>();
+        }
     }
 
     private void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+        var cameraTarget = _player.transform;
+        _playerCamera.Follow = cameraTarget;
+        _playerCamera.LookAt = cameraTarget;
+        
+        _treasureIslands =  FindObjectsOfType<TreasureIsland>();
+        _outpostIslands = FindObjectsOfType<OutpostIsland>();
 
-    public void StartGame()
+        _mainMenuIsland = _outpostIslands[Random.Range(0, _outpostIslands.Length)];
+
+
+        UIManager.OnStartButtonPressed += OnStartButtonPressed;
+        UIManager.OnRetryGameButtonPressed += OnRetryGameButtonPressed;
+        UIManager.OnExitToMainMenuButtonPressed += OnExitToMainMenuButtonPressed;
+    }
+    
+
+    private void StartGame()
     {
-        MissionManager.Instance.StartMission(_mainMenuIsland,2);
-        /*      MissionManager.Instance.OnMissionFinished += OnMissionFinished;*/
+        MissionManager.Instance.StartMission(_mainMenuIsland,0);
+        MissionManager.Instance.OnMissionFinished += OnMissionFinished;
+        
+        _player.SetControlsEnabled(true);
+        
+        OnGameStart?.Invoke();
     }
 
-/*    private void OnMissionFinished(IslandBase outpostIsland)
+    private void OnMissionFinished(IslandBase outpostIsland)
     {
         _mainMenuIsland = (OutpostIsland)outpostIsland;
         EndGame();
-    }*/
+    }
     
-    public void EndGame()
+    
+    
+    private void EndGame()
     {
+        _player.SetControlsEnabled(false);
         
+        Debug.Log("Game Ending");
     }
 
 
-    public void OnStartButtonPressed()
+    
+    
+    private void OnStartButtonPressed()
     {
-      
-
+        if(!MissionManager.InMission)
+            StartGame();
     }
 
-    public void OnRetryGameButtonPressed()
+    private void OnRetryGameButtonPressed()
     {
      
     }
 
-    public void OnExitToMainMenuButtonPressed()
+    private void OnExitToMainMenuButtonPressed()
     {
        
     }

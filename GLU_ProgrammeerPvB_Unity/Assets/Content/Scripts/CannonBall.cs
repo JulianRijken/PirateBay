@@ -43,10 +43,7 @@ public class CannonBall : MonoBehaviour
 
         if (collision != null)
         {
-            Debug.Log(collision.gameObject.name);
-            
             var damageableInterface = collision.gameObject.GetComponent<IDamageable>();
-
             damageableInterface?.OnHealthChange(-Damage);
         }
 

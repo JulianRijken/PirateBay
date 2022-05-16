@@ -8,7 +8,6 @@ public class EnemyShipBase : Ship
 
     [Header("Enemy AI")] 
     [SerializeField] private float _fireRange;
-    [SerializeField] private Transform _target;
     [SerializeField] private float _maxTimeInRange;
     [SerializeField] private float _inactiveDistance;
     [SerializeField] private float _angleRequiredForFireClose;
@@ -23,7 +22,13 @@ public class EnemyShipBase : Ship
     [SerializeField] private LayerMask _avoidLayerMask;
     
     private float _timeInRange;
-    
+    private Transform _target;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _target = GameManager.Player.transform;
+    }
 
     protected override void SinkShip()
     {

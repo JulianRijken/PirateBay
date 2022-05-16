@@ -23,11 +23,14 @@ public class Ship : MonoBehaviour, IDamageable
     [SerializeField] protected BuoyancyEffector3D _buoyancyEffector3D;
  
     [Header("Cannons")] 
-    [SerializeField] protected float _fireDelay;
+    [SerializeField] protected float _fireAllowedDelay;
     [SerializeField] protected Cannon[] _frontCannons;
     [SerializeField] protected Cannon[] _leftCannons;
     [SerializeField] protected Cannon[] _rightCannons;
-    [SerializeField] protected CannonSettings _cannonSettings;
+    [SerializeField] protected float _attackDamage;
+    [SerializeField] protected Vector2 _cannonAccuracy;
+    [SerializeField] protected float _cannonForce;
+    [SerializeField] protected float _cannonMaxRandomFireDelay;
     
     [SerializeField] private GameObject _shipSinkExplosionPrefab;
     [SerializeField] private MeshFilter _shipMesh;
@@ -44,11 +47,10 @@ public class Ship : MonoBehaviour, IDamageable
     protected Vector2 _movementInput = Vector2.zero;
     
     private Rigidbody _rigidbody;
-
+    public Rigidbody Rigidbody => _rigidbody;
 
     protected Action OnShipSinkEvent;
 
-    public CannonSettings CannonSettings => _cannonSettings;
 
     protected virtual void Awake()
     {
@@ -61,7 +63,6 @@ public class Ship : MonoBehaviour, IDamageable
         if (_centerOfMass)
         {
             _rigidbody.centerOfMass = _centerOfMass.localPosition;
-            Debug.Log(_rigidbody.centerOfMass);
         }
     }
 
@@ -147,7 +148,7 @@ public class Ship : MonoBehaviour, IDamageable
 
         foreach (var cannon in cannonsToFire)
         {
-            cannon.Fire();
+            cannon.Fire(_attackDamage,_cannonAccuracy,_cannonForce,_cannonMaxRandomFireDelay);
         }
 
         StartCoroutine(AddFireDelay());
@@ -155,7 +156,7 @@ public class Ship : MonoBehaviour, IDamageable
         IEnumerator AddFireDelay()
         {
             _waitingForFireDelay = true;
-            yield return new WaitForSeconds(_fireDelay);
+            yield return new WaitForSeconds(_fireAllowedDelay);
             _waitingForFireDelay = false;
         }
     }

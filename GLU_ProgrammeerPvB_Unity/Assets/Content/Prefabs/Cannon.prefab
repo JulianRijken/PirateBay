@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 214788287025120456}
-  - component: {fileID: 8241835091996988328}
+  - component: {fileID: 5085429700771769137}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8241835091996988328
+--- !u!114 &5085429700771769137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,12 +44,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 214788287025120458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c567c476292d1f40bbc9c412e70ad33, type: 3}
+  m_Script: {fileID: 11500000, guid: adad09e41ed186b4781b334b6a63e238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _firePoint: {fileID: 214788287385837118}
   _fireEffect: {fileID: 16448264815152318}
-  _cannonSettings: {fileID: 0}
+  _cannonBall: {fileID: 1738656262160748195, guid: 6dcd6a027fb969645963e75f6883420f, type: 3}
+  _xAngleOffsetMin: 3
+  _xAngleOffsetMax: 10
+  _yAngleOffsetMin: -4
+  _yAngleOffsetMax: 4
 --- !u!1 &214788287385837113
 GameObject:
   m_ObjectHideFlags: 0

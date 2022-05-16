@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 445726}
   - component: {fileID: 3379640}
   - component: {fileID: 2360624}
-  - component: {fileID: 64393277338166430}
+  - component: {fileID: 5921270398665714812}
   m_Layer: 0
   m_Name: SM_Env_Beach_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &445726
 Transform:
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 121640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 29.487787, y: 1.6749781, z: 48.941685}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64393277338166430
+--- !u!64 &5921270398665714812
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -7,39 +7,42 @@ using Random = UnityEngine.Random;
 public class Cannon : MonoBehaviour
 {
 
-    [SerializeField] private Transform _firePoint;
-    [SerializeField] private ParticleSystem _fireEffect;
+    [SerializeField] protected Transform _firePoint;
+    [SerializeField] protected ParticleSystem _fireEffect;
+    [SerializeField] protected CannonBall _cannonBall;
     
-    [Header("Custom Settings")]
-    [SerializeField] protected CannonSettings _cannonSettings;
+    
+    [SerializeField] [Range(-90f,90f)] protected float _xAngleOffsetMin;
+    [SerializeField] [Range(-90f,90f)] protected float _xAngleOffsetMax;
+    [SerializeField] [Range(-90f,90f)] protected float _yAngleOffsetMin;
+    [SerializeField] [Range(-90f,90f)] protected float _yAngleOffsetMax;
 
-    public void Fire()
+
+    public void Fire(float attackDamage, float force = 50f, float maxRandomFireDelay = 0f)
     {
-        
-        if (!_cannonSettings)
-        {
-            Debug.LogError("Cannon Settings are not assigned");
-            return;
-        }
-        
+        Fire(attackDamage, Vector2.one, force, maxRandomFireDelay);
+    }
+    
+    public void Fire(float attackDamage, Vector2 accuracyMultiplier, float force = 50f, float maxRandomFireDelay = 0f)
+    {
         StopCoroutine(FireEnumerator());
         StartCoroutine(FireEnumerator());
         
         IEnumerator FireEnumerator()
         {
-            yield return new WaitForSeconds(Random.value * _cannonSettings._maxRandomFireDelay);
+            yield return new WaitForSeconds(Random.value * maxRandomFireDelay);
             
             // Spawn cannon ball
-            var spawnedCannonBall = Instantiate(_cannonSettings._cannonBall, _firePoint.position, _firePoint.rotation);
+            var spawnedCannonBall = Instantiate(_cannonBall, _firePoint.position, _firePoint.rotation);
 
-            if(_cannonSettings._useCannonDamage)
-                spawnedCannonBall.Damage = _cannonSettings._damage;
+           
+            spawnedCannonBall.Damage = attackDamage;
             
             // Apply force to cannon ball
             var fireDirection = _firePoint.forward;
-            fireDirection = Quaternion.AngleAxis(Random.Range(-_cannonSettings._xAngleOffsetMin,-_cannonSettings._xAngleOffsetMax) / _cannonSettings._accuracyMultiplier, _firePoint.right) * fireDirection;
-            fireDirection = Quaternion.AngleAxis(Random.Range(-_cannonSettings._yAngleOffsetMin,-_cannonSettings._yAngleOffsetMax) / _cannonSettings._accuracyMultiplier, _firePoint.up) * fireDirection;
-            spawnedCannonBall.Rigidbody.AddForce(fireDirection * _cannonSettings._fireSpeedPower, ForceMode.VelocityChange);
+            fireDirection = Quaternion.AngleAxis(Random.Range(-_xAngleOffsetMin * accuracyMultiplier.x,-_xAngleOffsetMax * accuracyMultiplier.x), _firePoint.right) * fireDirection;
+            fireDirection = Quaternion.AngleAxis(Random.Range(-_yAngleOffsetMin * accuracyMultiplier.y,-_yAngleOffsetMax * accuracyMultiplier.y), _firePoint.up) * fireDirection;
+            spawnedCannonBall.Rigidbody.AddForce(fireDirection * force, ForceMode.VelocityChange);
         
             // Spawn effect
             _fireEffect.Play(true);
