@@ -110,7 +110,7 @@ public class Ship : MonoBehaviour, IDamageable
             _rigidbody.AddTorque(Vector3.up * ((_moveSpeed >= 0 ? 1 : -1) * _turnSpeedMultiplier * _movementInput.x * _turnSpeed.Evaluate(_moveSpeed / _maxForwardSpeed)), ForceMode.Acceleration);
 
             // Wobble ship in corners
-            _rigidbody.AddTorque(transform.forward * (_shipWobble * Mathf.Clamp01(_movementInput.x)), ForceMode.Acceleration);
+            _rigidbody.AddTorque(transform.forward * (_shipWobble * Mathf.Clamp(_movementInput.x, -1f,1f)), ForceMode.Acceleration);
         }
     }
 
