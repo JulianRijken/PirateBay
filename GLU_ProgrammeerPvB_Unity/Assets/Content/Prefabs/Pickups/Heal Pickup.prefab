@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _effect:
     EffectType: 2
-    EffectDuration: 10
+    EffectDuration: 1
   _pickupVFX: {fileID: 1624714524768532, guid: c9eb15264aa6c4348b00d5b9b3daab2a, type: 3}
 --- !u!54 &1224772679357948396
 Rigidbody:

@@ -2813,7 +2813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994373a64d278514b8bdea0f85593d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shipStartHealth: 10
+  _shipStartHealth: 100
   _maxForwardSpeed: 165
   _maxBackwardsSpeed: 30
   _accelerationSpeed: 35
@@ -2861,7 +2861,7 @@ MonoBehaviour:
   - {fileID: 6225017583103475867}
   - {fileID: 8759317723616849404}
   - {fileID: 3074600228052216246}
-  _attackDamage: 10
+  _attackDamage: 5
   _cannonAccuracy: {x: 1, y: 1}
   _cannonForce: 50
   _cannonMaxRandomFireDelay: 0.3
@@ -2877,11 +2877,11 @@ MonoBehaviour:
     TurnMultiplier: 2
     CannonAccuracy: {x: 1.25, y: 7}
   _attackSettings:
-    AttackDamage: 40
+    AttackDamage: 15
     MaxForwardSpeed: 100
     FireAllowedDelay: 0.35
   _healSettings:
-    RegainPercentage: 0.5
+    RegainPercentage: 0.75
 --- !u!54 &5758418029779293221
 Rigidbody:
   m_ObjectHideFlags: 0

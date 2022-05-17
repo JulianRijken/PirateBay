@@ -14,8 +14,9 @@ public class PlayerShipController : Ship, ICanPickup
     private Effect _effect;
 
     private DefaultSettings _defaultSettings;
-    
 
+    public Action<Effect> OnPlayerSetEffect;
+    
     [Header("Speed Effect")] 
     [SerializeField] private SpeedSettings _speedSettings;
     
@@ -77,6 +78,7 @@ public class PlayerShipController : Ship, ICanPickup
     
     private void SetEffect(Effect effect)
     {
+        
         switch (effect.EffectType)
         {
             case EffectType.Speed:
@@ -110,6 +112,9 @@ public class PlayerShipController : Ship, ICanPickup
         _effect = effect;
         _effectTimeLeft = effect.EffectDuration;
         _hasEffect = true;
+        
+        OnPlayerSetEffect(effect);
+
     }
 
     private void RemoveEffect(Effect effect)
@@ -175,6 +180,8 @@ public class PlayerShipController : Ship, ICanPickup
     
     private void OnSinkShipInput(InputAction.CallbackContext context)
     {
+        _shipHealth = 0f;
+        OnHealthChangeEvent?.Invoke(_shipHealth,_shipMaxHealth);
         SinkShip();
     }
 

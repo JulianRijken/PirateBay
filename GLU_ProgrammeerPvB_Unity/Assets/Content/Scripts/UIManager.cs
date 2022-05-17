@@ -11,6 +11,11 @@ public class UIManager : MonoBehaviour
     public static Action OnRetryGameButtonPressed;
     public static Action OnExitToMainMenuButtonPressed;
     
+    [SerializeField] private string _winText;
+    [SerializeField] private string _loseText;
+    [SerializeField] private TextMeshProUGUI _endScreenText;
+
+    
     [SerializeField] private GameObject _mainMenuScreen;
     [SerializeField] private GameObject _endScreen;
     [SerializeField] private GameObject _GUI;
@@ -23,6 +28,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider _healthSlider;
     
     [SerializeField] private TextMeshProUGUI _timerText;
+    
+    [SerializeField] private PowerUpUISlider _powerupShower;
 
 
     private int _islandCount;
@@ -35,7 +42,15 @@ public class UIManager : MonoBehaviour
         GameManager.OnGameExitToMenu += OnGameExitTomMenu;
         
         GameManager.Player.OnHealthChangeEvent += OnHealthChangeEvent;
+        GameManager.Player.OnPlayerSetEffect += OnPlayerSetEffect;
         MissionManager.Instance.OnTimerChange += OnTimerChange;
+        
+        
+    }
+
+    private void OnPlayerSetEffect(Effect effect)
+    {
+        _powerupShower.Show(effect.EffectType,effect.EffectDuration);
     }
 
     private void OnTimerChange(float timer)
@@ -49,8 +64,8 @@ public class UIManager : MonoBehaviour
     private void OnHealthChangeEvent(float newHealth, float maxHealth)
     {
         _healthSlider.value = Mathf.Clamp01(newHealth / maxHealth);
-        _healthText.text = newHealth.ToString();
-        _maxHealthText.text = maxHealth.ToString();
+        _healthText.text = Mathf.Ceil(newHealth).ToString();
+        _maxHealthText.text = Mathf.Ceil(maxHealth).ToString();
     }
 
     private void LateUpdate()
@@ -92,9 +107,12 @@ public class UIManager : MonoBehaviour
 
     private void OnGameOver(bool gameWon)
     {
+        Debug.Log("GAME WON: " + gameWon);
+        
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        
+
+        _endScreenText.text = gameWon ? _winText : _loseText;
         SetScreenActive(_endScreen);
     }
 
@@ -121,6 +139,7 @@ public class UIManager : MonoBehaviour
 
     public void PressControlsButton()
     {
+        _powerupShower.Show(EffectType.Attack,10f);
         _controlsScreen.SetActive(true);
     }
 

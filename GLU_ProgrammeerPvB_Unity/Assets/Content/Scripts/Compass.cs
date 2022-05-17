@@ -16,12 +16,11 @@ public class Compass : MonoBehaviour
         _playerShip = GameManager.Player.transform;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if(!_playerShip)
             return;
 
-        Debug.DrawLine(_playerShip.transform.position,Target, Color.green);
         
         transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
 

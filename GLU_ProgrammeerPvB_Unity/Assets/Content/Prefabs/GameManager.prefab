@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
   _playerCamera: {fileID: 0}
+  _mainCamera: {fileID: 0}

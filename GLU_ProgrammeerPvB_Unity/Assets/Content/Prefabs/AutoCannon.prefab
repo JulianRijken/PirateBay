@@ -86,7 +86,7 @@ MonoBehaviour:
   _yAngleOffsetMax: 3
   _fireForce: 0.9
   _fireInterval: {x: 2, y: 3}
-  _damage: 10
+  _damage: 7.5
   _range: 150
   _projectionDistance: 2
   _maxAngle: 70

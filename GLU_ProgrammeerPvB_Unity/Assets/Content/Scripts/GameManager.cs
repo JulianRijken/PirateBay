@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log(_mainMenuIsland + " ISLAND");
         
-        MissionManager.Instance.StartMission(_mainMenuIsland,2, 1);
+        MissionManager.Instance.StartMission(_mainMenuIsland,2, 5);
         MissionManager.Instance.OnMissionFinished += OnMissionFinished;
         
         _player.SetControlsEnabled(true);
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
     private void OnMissionFinished(OutpostIsland outpostIsland, bool gameWon)
     {
         _mainMenuIsland = outpostIsland;
-        GameOver(true);
+        GameOver(gameWon);
     }
     
     

@@ -10,11 +10,13 @@ public class MissionManager : MonoBehaviour
     
     [SerializeField] private EnemyShipBase _enemyBigPrefab;
     [SerializeField] private EnemyShipBase _enemySmallPrefab;
+    [SerializeField] private ExplosiveBarrel _explosiveBarrelPrefab;
     [SerializeField] private Pickup[] _pickupPrefab;
     
     [SerializeField] private int _pickupCount;
     [SerializeField] private int _enemyBigCount;
     [SerializeField] private int _enemySmallCount;
+    [SerializeField] private int _explosiveBarrelCount;
     
     [SerializeField] private SpawnManager _spawnManager;
     
@@ -68,8 +70,12 @@ public class MissionManager : MonoBehaviour
             var vector3Position = GameManager.Player.transform.position;
             var playerPosition = new Vector2(vector3Position.x, vector3Position.z);
             var distanceBetweenPlayerAndTargetIsland = Vector2.Distance(playerPosition, targetIsland.TargetLocation);
+
+            if (distanceBetweenPlayerAndTargetIsland > distanceBetweenIslands)
+                return 1f;
             
-            alpha = distanceBetweenPlayerAndTargetIsland / distanceBetweenIslands;
+            
+            alpha = Mathf.Max(0f,distanceBetweenPlayerAndTargetIsland / distanceBetweenIslands);
         }
         
         return alpha;
@@ -212,6 +218,18 @@ public class MissionManager : MonoBehaviour
 
             Instantiate(_pickupPrefab[Random.Range(0,_pickupPrefab.Length)], spawnPoint, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
         }
+        
+        for (var i = 0; i < _explosiveBarrelCount; i++)
+        {
+            if(spawnPoints.Count == 0)
+                return;
+            
+            var randomIndex = Random.Range(0, spawnPoints.Count);
+            var spawnPoint = spawnPoints[randomIndex];
+            spawnPoints.RemoveAt(randomIndex);
+
+            Instantiate(_explosiveBarrelPrefab, spawnPoint, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
+        }
     }
 
     private void OnTargetIslandVisited()
@@ -262,6 +280,12 @@ public class MissionManager : MonoBehaviour
         foreach (var pickup in pickups)
         {
             Destroy(pickup.gameObject);
+        }
+        
+        var explosiveBarrels = FindObjectsOfType<ExplosiveBarrel>();
+        foreach (var explosiveBarrel in explosiveBarrels)
+        {
+            Destroy(explosiveBarrel.gameObject);
         }
         
         _compass.gameObject.SetActive(false);

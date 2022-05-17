@@ -47,13 +47,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyBigPrefab: {fileID: 3530593413920042458, guid: 160321ef9af114440a6f52481dd88886, type: 3}
   _enemySmallPrefab: {fileID: 385612137845611298, guid: b252ea3edbf3660419f257d420fc7d67, type: 3}
+  _explosiveBarrelPrefab: {fileID: 2728121117403155603, guid: 8e1dc8635ec5e6242bcf17b95d102fcb, type: 3}
   _pickupPrefab:
   - {fileID: 812806360874281918, guid: 0ca0b19fa0d52b24fbd281fddaefd164, type: 3}
   - {fileID: 1224772679357948387, guid: affcf06671b1c0a4eb34c193c7f84066, type: 3}
   - {fileID: 4130529725787923196, guid: f836e83918ddd9548b643e7d28ed71e1, type: 3}
-  _pickupCount: 250
-  _enemyBigCount: 15
-  _enemySmallCount: 30
+  _pickupCount: 230
+  _enemyBigCount: 14
+  _enemySmallCount: 25
+  _explosiveBarrelCount: 50
   _spawnManager: {fileID: 912950489}
   _compass: {fileID: 0}
 --- !u!114 &912950489
@@ -68,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f09cec248e87c45995cdedbbcf740d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _size: {x: 2200, y: 2200}
+  _size: {x: 1800, y: 1800}
   _pointsPerSide: 40
   _checkRadius: 25
   _layerMask:
