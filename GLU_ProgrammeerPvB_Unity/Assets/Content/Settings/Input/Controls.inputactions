@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SinkShip",
+                    "type": "Button",
+                    "id": "63e4a640-9f82-46bf-9ec1-b4fc546856b8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -145,6 +154,17 @@
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "01b793f7-9751-4f1d-8b15-0b7dbc8ad8ad",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SinkShip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

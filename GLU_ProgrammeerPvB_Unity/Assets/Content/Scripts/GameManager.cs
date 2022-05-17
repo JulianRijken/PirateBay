@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     
     [SerializeField] private PlayerShipController _player;
     [SerializeField] private CinemachineFreeLook _playerCamera;
-    
+    [SerializeField] private CinemachineBrain _mainCamera;
+
     private OutpostIsland[] _outpostIslands;
     private TreasureIsland[] _treasureIslands;
     private OutpostIsland _mainMenuIsland;
@@ -23,6 +26,8 @@ public class GameManager : MonoBehaviour
 
 
     public static Action OnGameStart;
+    public static Action OnGameExitToMenu;
+    public static Action<bool> OnGameOver;
 
     private void Awake()
     {
@@ -32,6 +37,16 @@ public class GameManager : MonoBehaviour
         {
             _player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShipController>();
         }
+        
+        _treasureIslands =  FindObjectsOfType<TreasureIsland>();
+        _outpostIslands = FindObjectsOfType<OutpostIsland>();
+
+        _mainMenuIsland = _outpostIslands[Random.Range(0, _outpostIslands.Length)];
+
+        
+        UIManager.OnStartButtonPressed += OnStartButtonPressed;
+        UIManager.OnRetryGameButtonPressed += OnRetryGameButtonPressed;
+        UIManager.OnExitToMainMenuButtonPressed += OnExitToMainMenuButtonPressed;
     }
 
     private void Start()
@@ -40,44 +55,49 @@ public class GameManager : MonoBehaviour
         _playerCamera.Follow = cameraTarget;
         _playerCamera.LookAt = cameraTarget;
         
-        _treasureIslands =  FindObjectsOfType<TreasureIsland>();
-        _outpostIslands = FindObjectsOfType<OutpostIsland>();
-
-        _mainMenuIsland = _outpostIslands[Random.Range(0, _outpostIslands.Length)];
-
-
-        UIManager.OnStartButtonPressed += OnStartButtonPressed;
-        UIManager.OnRetryGameButtonPressed += OnRetryGameButtonPressed;
-        UIManager.OnExitToMainMenuButtonPressed += OnExitToMainMenuButtonPressed;
+        _mainMenuIsland.IslandCamera.Priority = 1;
     }
     
 
     private void StartGame()
     {
-        MissionManager.Instance.StartMission(_mainMenuIsland,0);
+        Debug.Log(_mainMenuIsland + " ISLAND");
+        
+        MissionManager.Instance.StartMission(_mainMenuIsland,2, 1);
         MissionManager.Instance.OnMissionFinished += OnMissionFinished;
         
         _player.SetControlsEnabled(true);
         
+        _mainMenuIsland.IslandCamera.Priority = 0;
+        _playerCamera.Priority = 1;
         OnGameStart?.Invoke();
     }
-
-    private void OnMissionFinished(IslandBase outpostIsland)
-    {
-        _mainMenuIsland = (OutpostIsland)outpostIsland;
-        EndGame();
-    }
     
-    
-    
-    private void EndGame()
+    /// Shows the end screen
+    private void GameOver(bool isGameWon)
     {
         _player.SetControlsEnabled(false);
-        
-        Debug.Log("Game Ending");
+        _playerCamera.Priority = 0;
+        _mainMenuIsland.IslandCamera.Priority = 1;
+        OnGameOver?.Invoke(isGameWon);
+    }
+
+    // Exits the game to the main menu
+    private void ExitToMenu()
+    {
+        OnGameExitToMenu?.Invoke();
     }
 
 
+    
+    
+    private void OnMissionFinished(OutpostIsland outpostIsland, bool gameWon)
+    {
+        _mainMenuIsland = outpostIsland;
+        GameOver(true);
+    }
+    
+    
     
     
     private void OnStartButtonPressed()
@@ -88,12 +108,13 @@ public class GameManager : MonoBehaviour
 
     private void OnRetryGameButtonPressed()
     {
-     
+        Debug.LogWarning("Might not work");
+        StartGame();
     }
 
     private void OnExitToMainMenuButtonPressed()
     {
-       
+        ExitToMenu();
     }
 
 

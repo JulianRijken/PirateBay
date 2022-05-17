@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _islandName: Shipwreck
-  checkPoint: {fileID: 7478322332013440901}
+  _checkPoint: {fileID: 7478322332013440901}
+  _islandCamera: {fileID: 0}
 --- !u!1 &6063068752814538820
 GameObject:
   m_ObjectHideFlags: 0

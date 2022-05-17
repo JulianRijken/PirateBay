@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _islandName: Mangrove
-  _checkPoint: {fileID: 0}
+  _checkPoint: {fileID: 194401554318007264}
+  _islandCamera: {fileID: 0}
 --- !u!1 &6593978107844697540
 GameObject:
   m_ObjectHideFlags: 0
@@ -11824,6 +11825,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8111bd6d91f7ca41a23a92830d163ca, type: 3}
+--- !u!114 &194401554318007264 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6083009723213239821, guid: d8111bd6d91f7ca41a23a92830d163ca, type: 3}
+  m_PrefabInstance: {fileID: 6258198299534675437}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7772a7bf899a304bace30c6a7cece9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5771246665598634106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 490329898647143831, guid: d8111bd6d91f7ca41a23a92830d163ca, type: 3}

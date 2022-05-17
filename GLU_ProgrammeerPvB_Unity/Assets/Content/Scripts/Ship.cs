@@ -8,7 +8,8 @@ public class Ship : MonoBehaviour, IDamageable
 {
 
     [Header("Health")]
-    [SerializeField] protected float _shipMaxHealth;
+    [SerializeField] protected float _shipStartHealth;
+    protected float _shipMaxHealth;
 
     [Header("Movement")]
     [SerializeField] protected float _maxForwardSpeed = 165f;
@@ -38,6 +39,8 @@ public class Ship : MonoBehaviour, IDamageable
     [SerializeField] private float _explodeEffectSpeed;
     [SerializeField] private float _shipSinkSpeed = 5f;
     [SerializeField] private float _shipSinkDelay = 2f;
+
+    private float _defaultFloatingPower;
     
     private bool _waitingForFireDelay;
     
@@ -49,13 +52,15 @@ public class Ship : MonoBehaviour, IDamageable
     private Rigidbody _rigidbody;
     public Rigidbody Rigidbody => _rigidbody;
 
-    protected Action OnShipSinkEvent;
+    public Action OnShipSunken;
 
+    public delegate void OnHealthChangeDelegate(float newHealth, float maxHealth);
 
+    public OnHealthChangeDelegate OnHealthChangeEvent;
+    
     protected virtual void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _shipHealth = _shipMaxHealth;
     }
 
     protected virtual void Start()
@@ -64,6 +69,12 @@ public class Ship : MonoBehaviour, IDamageable
         {
             _rigidbody.centerOfMass = _centerOfMass.localPosition;
         }
+
+        _defaultFloatingPower = _buoyancyEffector3D.FloatingPower;
+
+        _shipMaxHealth = _shipStartHealth;
+        _shipHealth = _shipMaxHealth;
+        OnHealthChangeEvent?.Invoke(_shipHealth,_shipMaxHealth);
     }
 
     protected virtual void Update()
@@ -177,12 +188,25 @@ public class Ship : MonoBehaviour, IDamageable
             return;
         
         _shipHealth += delta;
+        _shipHealth = Mathf.Max(0f, _shipHealth);
+        
+        OnHealthChangeEvent?.Invoke(_shipHealth,_shipMaxHealth);
         Debug.Log($"name: {gameObject.name}, health change: {delta}, current health: {_shipHealth}");
         
-        if (_shipHealth < 0f)
+        if (_shipHealth <= 0f)
         {
             SinkShip();
         }
+    }
+
+    public virtual void UnSinkShip()
+    {
+        _shipMaxHealth = _shipStartHealth;
+        _shipHealth = _shipMaxHealth;
+        OnHealthChangeEvent?.Invoke(_shipHealth,_shipMaxHealth);
+        
+        _buoyancyEffector3D.FloatingPower = _defaultFloatingPower;
+        _shipSunk = false;
     }
 
     protected virtual void SinkShip()
@@ -190,12 +214,10 @@ public class Ship : MonoBehaviour, IDamageable
         Debug.Log($"Ship sunk: {gameObject.name}");
         
         _shipSunk = true;
-        OnShipSinkEvent?.Invoke();
-
         
         StartCoroutine(ShipSinkEffect());
         StartCoroutine(ShipExplodeEffect());
-        
+
         IEnumerator ShipExplodeEffect()
         {
             if (_shipMesh.mesh.isReadable && _shipMesh)
@@ -219,20 +241,18 @@ public class Ship : MonoBehaviour, IDamageable
         IEnumerator ShipSinkEffect()
         {
             yield return new WaitForSeconds(_shipSinkDelay);
-
-            var startingPower = _buoyancyEffector3D.FloatingPower;
-
-
             
             var timer = _shipSinkSpeed;
             while (timer > 0f)
             {
-                _buoyancyEffector3D.FloatingPower = startingPower * timer / _shipSinkSpeed;
-                _rigidbody.AddTorque(transform.right * -50f * Time.deltaTime,ForceMode.Acceleration);
-                _rigidbody.AddForce(Vector3.down * 100 * Time.deltaTime, ForceMode.Acceleration);
+                _buoyancyEffector3D.FloatingPower = _defaultFloatingPower * timer / _shipSinkSpeed;
+                _rigidbody.AddTorque(transform.right * (-50f * Time.deltaTime),ForceMode.Acceleration);
+                _rigidbody.AddForce(Vector3.down * (100 * Time.deltaTime), ForceMode.Acceleration);
                 timer -= Time.deltaTime;
                 yield return null;
             } 
+            
+            OnShipSunken?.Invoke();
         }
     }
     

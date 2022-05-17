@@ -24,8 +24,8 @@ public class PlayerShipController : Ship, ICanPickup
 
     [Header("Attack Effect")] 
     [SerializeField] private HealSettings _healSettings;
-    
-    
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -35,6 +35,7 @@ public class PlayerShipController : Ship, ICanPickup
         _controls.Player.Move.canceled += OnMovementInput;
 
         _controls.Player.Shoot.performed += OnShootInput;
+        _controls.Player.SinkShip.performed += OnSinkShipInput;
         
     }
     
@@ -99,6 +100,9 @@ public class PlayerShipController : Ship, ICanPickup
                 
                 // Apply new health
                 _shipHealth = _shipMaxHealth;
+                
+                // Fire event
+                OnHealthChangeEvent?.Invoke(_shipHealth,_shipMaxHealth);
 
                 break;
         }
@@ -168,6 +172,12 @@ public class PlayerShipController : Ship, ICanPickup
         
         TryFireCannons(side > 0f ? Side.Right : Side.Left);
     }
+    
+    private void OnSinkShipInput(InputAction.CallbackContext context)
+    {
+        SinkShip();
+    }
+
     
     private struct DefaultSettings
     {

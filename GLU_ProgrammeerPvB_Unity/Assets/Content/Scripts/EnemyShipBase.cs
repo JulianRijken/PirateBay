@@ -96,13 +96,13 @@ public class EnemyShipBase : Ship
         // If the player is to far away
         if (distanceFromTarget > _inactiveDistance)
         {
-            Debug.DrawLine(transform.position, _target.position, Color.red);
+            // Debug.DrawLine(transform.position, _target.position, Color.red);
             _movementInput = Vector3.zero;
             return;
         }
 
         
-        Debug.DrawLine(transform.position, _target.position, Color.green);
+        // Debug.DrawLine(transform.position, _target.position, Color.green);
         _movementInput = new Vector2(0,1);
 
 

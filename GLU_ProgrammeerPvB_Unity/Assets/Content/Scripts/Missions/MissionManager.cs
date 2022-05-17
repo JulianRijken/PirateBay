@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -17,30 +18,107 @@ public class MissionManager : MonoBehaviour
     
     [SerializeField] private SpawnManager _spawnManager;
     
-    
+    [SerializeField] private Compass _compass;
+
+    private float _gameTimer;
+
     private Vector3[] _spawnOptions;
     
     private List<IslandBase> _missionIslands;
+    private OutpostIsland _startOutpost;
+    
     
     private bool _inMission;
     private int _targetIslandIndex;
 
-    public Action<IslandBase> OnMissionFinished;
+    public Action<OutpostIsland, bool> OnMissionFinished;
+    public Action<float> OnTimerChange;
+
 
     public static bool InMission => Instance._inMission;
     public static MissionManager Instance { get; private set; }
+    
 
+
+    public float GetMissionAlpha()
+    {
+        var alpha = 0f;
+
+        if (_inMission)
+        {
+            var addedDistance = Mathf.Abs(1 - GetAlphaToTargetIsland()) / _missionIslands.Count;
+            alpha = Mathf.Clamp01((float)_targetIslandIndex / _missionIslands.Count + addedDistance);
+        }
+
+        return alpha;
+    }
+    
+    public float GetAlphaToTargetIsland()
+    {
+        var alpha = 0f;
+
+        if (_inMission)
+        {
+            var lastIsland = _targetIslandIndex > 0 ? _missionIslands[_targetIslandIndex - 1] : _startOutpost;
+
+            var targetIsland = _missionIslands[_targetIslandIndex];
+
+            var distanceBetweenIslands = Vector2.Distance(lastIsland.TargetLocation, targetIsland.TargetLocation);
+
+            var vector3Position = GameManager.Player.transform.position;
+            var playerPosition = new Vector2(vector3Position.x, vector3Position.z);
+            var distanceBetweenPlayerAndTargetIsland = Vector2.Distance(playerPosition, targetIsland.TargetLocation);
+            
+            alpha = distanceBetweenPlayerAndTargetIsland / distanceBetweenIslands;
+        }
+        
+        return alpha;
+    }
 
     private void Awake()
     {
         Instance = this;
         _spawnOptions = _spawnManager.GetAvailableSpawnPoints();
+
+        GameManager.Player.OnShipSunken += OnPlayerShipSunk;
+    }
+
+    private void Update()
+    {
+        if (_inMission)
+        {
+            _gameTimer = Mathf.Max(0, _gameTimer - Time.deltaTime);
+            OnTimerChange?.Invoke(_gameTimer);
+            
+            if (_gameTimer <= 0f)
+            {
+                OnTimerOver();
+            }
+        }
+    }
+
+    private void OnTimerOver()
+    {
+        EndMission(false);
+    }
+
+    private void OnPlayerShipSunk()
+    {
+        // Game lost :(
+        EndMission(false);
     }
 
 
-    public void StartMission(OutpostIsland startOutpost, int treasureIslands)
+    public void StartMission(OutpostIsland startOutpost, int treasureIslands, int missionLengthInMinutes)
     {
         Debug.Log("Starting Mission");
+
+        _startOutpost = startOutpost;
+        
+        _gameTimer = missionLengthInMinutes * 60f;
+        
+        _compass.gameObject.SetActive(true);
+
         
         // Clear list
         _missionIslands = new List<IslandBase>();
@@ -64,17 +142,25 @@ public class MissionManager : MonoBehaviour
         _targetIslandIndex = 0;
         _missionIslands[_targetIslandIndex].OnPlayerVisitIsland += OnTargetIslandVisited;
         _missionIslands[_targetIslandIndex].CheckPoint.SetCheckpointActive(true);
-
-
+        
+        
+        // Update compass
+        _compass.Target = _missionIslands[_targetIslandIndex].CheckPoint.transform.position;
+        
+        // Spawn all objects in game
         SpawnObjects();
         
 
         // Position player at start outpost
         if (startOutpost.PlayerStart)
         {
+            // Position Player
             var playerTransform = GameManager.Player.transform;
             playerTransform.position = startOutpost.PlayerStart.position;
             playerTransform.rotation = startOutpost.PlayerStart.rotation;
+            
+            // Make sure the player ship is not sunken
+            GameManager.Player.UnSinkShip();
         }
         else
         {
@@ -139,21 +225,31 @@ public class MissionManager : MonoBehaviour
         // Is player at last island?
         if (_targetIslandIndex == _missionIslands.Count - 1)
         {
-            EndMission();
+            // Game won!
+            EndMission(true);
         }
         else
         {
             Debug.Log("Moving To Next Island");
             
+            // Update index
             _targetIslandIndex++;
             _missionIslands[_targetIslandIndex].OnPlayerVisitIsland += OnTargetIslandVisited;
             _missionIslands[_targetIslandIndex].CheckPoint.SetCheckpointActive(true);
+            
+            
+            // Update compass
+            _compass.Target = _missionIslands[_targetIslandIndex].CheckPoint.transform.position;
         }
     }
 
-    private void EndMission()
+    private void EndMission(bool gameWon)
     {
         Debug.Log("Mission End");
+        _inMission = false;   
+        
+        // Remove checkpoint for when the player never reaches is 
+        _missionIslands[_targetIslandIndex].CheckPoint.SetCheckpointActive(false);
         
         // Remove all enemies
         var enemys = FindObjectsOfType<EnemyShipBase>();
@@ -168,16 +264,22 @@ public class MissionManager : MonoBehaviour
             Destroy(pickup.gameObject);
         }
         
-        OnMissionFinished?.Invoke(_missionIslands[_targetIslandIndex]);
-        _inMission = false;
+        _compass.gameObject.SetActive(false);
+
+        var targetOutpost = (OutpostIsland)_missionIslands.Last();
+        OnMissionFinished?.Invoke(targetOutpost,gameWon);
+        
     }
 
-    
-#if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-        if(_inMission)
-            Gizmos.DrawLine(GameManager.Player.transform.position,_missionIslands[_targetIslandIndex].CheckPoint.transform.position);
-    }
-#endif
+//     
+// #if UNITY_EDITOR
+//     private void OnDrawGizmos()
+//     {
+//         if (_inMission)
+//         {
+//             Gizmos.color = Color.white;
+//             Gizmos.DrawLine(GameManager.Player.transform.position, _missionIslands[_targetIslandIndex].CheckPoint.transform.position);
+//         }
+//     }
+// #endif
 }

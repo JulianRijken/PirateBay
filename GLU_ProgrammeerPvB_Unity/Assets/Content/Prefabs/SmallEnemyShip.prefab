@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5460019c1e908ea4bbba2c03cc9cce51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shipMaxHealth: 50
+  _shipStartHealth: 40
   _maxForwardSpeed: 165
   _maxBackwardsSpeed: 30
   _accelerationSpeed: 40

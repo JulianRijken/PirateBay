@@ -55,6 +55,7 @@ MonoBehaviour:
   _enemyBigCount: 15
   _enemySmallCount: 30
   _spawnManager: {fileID: 912950489}
+  _compass: {fileID: 0}
 --- !u!114 &912950489
 MonoBehaviour:
   m_ObjectHideFlags: 0
