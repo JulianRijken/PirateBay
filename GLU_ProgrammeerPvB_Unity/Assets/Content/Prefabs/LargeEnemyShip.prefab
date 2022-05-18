@@ -3392,7 +3392,7 @@ MonoBehaviour:
   _collisionCheckPoint: {fileID: 509245246}
   _avoidLayerMask:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 896
 --- !u!54 &3530593413920042451
 Rigidbody:
   m_ObjectHideFlags: 0

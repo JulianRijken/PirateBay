@@ -32,7 +32,7 @@ public class CheckPoint : MonoBehaviour
         if(!_active)
             return;
         
-        if(other.CompareTag("Player"))
+        if(!other.CompareTag("Player"))
             return;
         
         OnCheckPointEnter?.Invoke();

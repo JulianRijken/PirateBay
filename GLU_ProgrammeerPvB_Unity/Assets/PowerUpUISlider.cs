@@ -20,6 +20,8 @@ public class PowerUpUISlider : MonoBehaviour
     public void Show(EffectType type, float time)
     {
         _frame.sprite = _type[(int)type];
+
+        gameObject.SetActive(true);
         
         StopAllCoroutines();
         StartCoroutine(ShowEnumerator(time));

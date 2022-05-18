@@ -30,6 +30,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _timerText;
     
     [SerializeField] private PowerUpUISlider _powerupShower;
+    [SerializeField] private TextMeshProUGUI _finalTimeText;
+    
+    [SerializeField] private AudioSource _audioSource;
 
 
     private int _islandCount;
@@ -101,7 +104,10 @@ public class UIManager : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-
+        
+        if(_powerupShower.isActiveAndEnabled)
+            _powerupShower.transform.localScale = Vector3.zero;
+        
         SetScreenActive(_GUI);
     }
 
@@ -113,6 +119,7 @@ public class UIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         _endScreenText.text = gameWon ? _winText : _loseText;
+        _finalTimeText.text = gameWon ? _timerText.text : "";
         SetScreenActive(_endScreen);
     }
 
@@ -130,8 +137,11 @@ public class UIManager : MonoBehaviour
     {
         OnRetryGameButtonPressed?.Invoke();
     }
-    
 
+    public void PlaySound(AudioClip sound)
+    {
+        _audioSource.PlayOneShot(sound);
+    }
 
 
     
@@ -139,7 +149,6 @@ public class UIManager : MonoBehaviour
 
     public void PressControlsButton()
     {
-        _powerupShower.Show(EffectType.Attack,10f);
         _controlsScreen.SetActive(true);
     }
 

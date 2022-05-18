@@ -16,6 +16,8 @@ public class Cannon : MonoBehaviour
     [SerializeField] [Range(-90f,90f)] protected float _xAngleOffsetMax;
     [SerializeField] [Range(-90f,90f)] protected float _yAngleOffsetMin;
     [SerializeField] [Range(-90f,90f)] protected float _yAngleOffsetMax;
+    [SerializeField] private AudioClip[] _audioOptions;
+    [SerializeField] private AudioSource _audioSource;
 
 
     public void Fire(float attackDamage, float force = 50f, float maxRandomFireDelay = 0f)
@@ -32,6 +34,9 @@ public class Cannon : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.value * maxRandomFireDelay);
             
+            // Play Audio
+            _audioSource.PlayOneShot(_audioOptions[Random.Range(0,_audioOptions.Length)]);
+
             // Spawn cannon ball
             var spawnedCannonBall = Instantiate(_cannonBall, _firePoint.position, _firePoint.rotation);
 

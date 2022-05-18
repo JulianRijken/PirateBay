@@ -3,18 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[RequireComponent(typeof(AudioSource))]
 public class Pickup : MonoBehaviour
 {
     [SerializeField] private Effect _effect;
     [SerializeField] private GameObject _pickupVFX;
+    [SerializeField] private AudioClip _pickUpAudio;
     
     private bool _pickedUp = false;
     private Rigidbody _rigidbody;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -37,6 +40,7 @@ public class Pickup : MonoBehaviour
         if(!pickupInterface.CanPickup())
             return;
         
+        _audioSource.PlayOneShot(_pickUpAudio);
         _pickedUp = true;
         OnPickupPickedUp(pickupInterface);
     }

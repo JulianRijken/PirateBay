@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 5696998817951178371}
   m_Layer: 6
   m_Name: SM_Veh_Veh_Boat_Large_01_Hull_Pirate_Attachments
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
