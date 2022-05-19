@@ -7,10 +7,6 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static Action OnStartButtonPressed;
-    public static Action OnRetryGameButtonPressed;
-    public static Action OnExitToMainMenuButtonPressed;
-    
     [SerializeField] private string _winText;
     [SerializeField] private string _loseText;
     [SerializeField] private TextMeshProUGUI _endScreenText;
@@ -27,16 +23,24 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _maxHealthText;
     [SerializeField] private Slider _healthSlider;
     
-    [SerializeField] private TextMeshProUGUI _timerText;
+    [SerializeField] private TextMeshProUGUI _missionTimeText;
     
-    [SerializeField] private PowerUpUISlider _powerupShower;
-    [SerializeField] private TextMeshProUGUI _finalTimeText;
-    
+    [SerializeField] private PowerUpUISlider _powerUpShower;
+    [SerializeField] private TextMeshProUGUI _timeTookText;
+    [SerializeField] private Color _winColor;
+    [SerializeField] private Color _loseColor;
+    [SerializeField] private TextMeshProUGUI _shipsKilledText;
+
     [SerializeField] private AudioSource _audioSource;
 
 
     private int _islandCount;
     private int _currentIsland;
+    
+    public static Action OnStartButtonPressed;
+    public static Action OnRetryGameButtonPressed;
+    public static Action OnExitToMainMenuButtonPressed;
+    
     
     private void Awake()
     {
@@ -47,21 +51,31 @@ public class UIManager : MonoBehaviour
         GameManager.Player.OnHealthChangeEvent += OnHealthChangeEvent;
         GameManager.Player.OnPlayerSetEffect += OnPlayerSetEffect;
         MissionManager.Instance.OnTimerChange += OnTimerChange;
-        
-        
     }
+    
+    private void Start()
+    {
+        SetScreenActive(_mainMenuScreen);
+        _controlsScreen.SetActive(false);
+        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    
+    private void LateUpdate()
+    {
+        _gameSlideBar.value = MissionManager.Instance.GetMissionAlpha();
+    }
+
 
     private void OnPlayerSetEffect(Effect effect)
     {
-        _powerupShower.Show(effect.EffectType,effect.EffectDuration);
+        _powerUpShower.Show(effect.EffectType,effect.EffectDuration);
     }
 
     private void OnTimerChange(float timer)
     {
-        var minutes = Mathf.Floor(timer / 60);
-        var seconds = Mathf.RoundToInt(timer%60);;
-        
-        _timerText.text = $"{minutes}m {seconds}s";
+        _missionTimeText.text = ConvertToTime(timer);
     }
 
     private void OnHealthChangeEvent(float newHealth, float maxHealth)
@@ -70,43 +84,19 @@ public class UIManager : MonoBehaviour
         _healthText.text = Mathf.Ceil(newHealth).ToString();
         _maxHealthText.text = Mathf.Ceil(maxHealth).ToString();
     }
-
-    private void LateUpdate()
-    {
-        _gameSlideBar.value = MissionManager.Instance.GetMissionAlpha();
-    }
     
-
-
+    
     private void OnGameExitTomMenu()
     {
         SetScreenActive(_mainMenuScreen);
     }
-
-    private void Start()
-    {
-        SetScreenActive(_mainMenuScreen);
-        
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    private void SetScreenActive(GameObject activeScreen)
-    {
-        _mainMenuScreen.SetActive(false);
-        _GUI.SetActive(false);
-        _endScreen.SetActive(false);
-        
-        activeScreen.SetActive(true);
-    }
-
+    
     private void OnGameStart()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         
-        if(_powerupShower.isActiveAndEnabled)
-            _powerupShower.transform.localScale = Vector3.zero;
+        _powerUpShower.Hide();
         
         SetScreenActive(_GUI);
     }
@@ -119,15 +109,39 @@ public class UIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         _endScreenText.text = gameWon ? _winText : _loseText;
-        _finalTimeText.text = gameWon ? _timerText.text : "";
+        
+        _timeTookText.text = ConvertToTime(MissionManager.TimeInMission);
+        _timeTookText.color = gameWon ? _winColor : _loseColor;
+        _shipsKilledText.text = MissionManager.ShipsKilled.ToString();
+        
         SetScreenActive(_endScreen);
     }
+    
+    
+    
+    private void SetScreenActive(GameObject activeScreen)
+    {
+        _mainMenuScreen.SetActive(false);
+        _GUI.SetActive(false);
+        _endScreen.SetActive(false);
+        
+        activeScreen.SetActive(true);
+    }
 
-
+    private string ConvertToTime(float time)
+    {
+        var minutes = Mathf.Floor(time / 60);
+        var seconds = Mathf.RoundToInt(time % 60);;
+        
+        return $"{minutes}m {seconds}s";
+    }
+    
+    
     public void PressStartButton()
     {
         OnStartButtonPressed?.Invoke();
     }
+    
     public void PressExitGameButton()
     {
         OnExitToMainMenuButtonPressed?.Invoke();
@@ -137,16 +151,7 @@ public class UIManager : MonoBehaviour
     {
         OnRetryGameButtonPressed?.Invoke();
     }
-
-    public void PlaySound(AudioClip sound)
-    {
-        _audioSource.PlayOneShot(sound);
-    }
-
-
     
-    
-
     public void PressControlsButton()
     {
         _controlsScreen.SetActive(true);
@@ -155,6 +160,11 @@ public class UIManager : MonoBehaviour
     public void PressHideControlsButton()
     {
         _controlsScreen.SetActive(false);
+    }
+    
+    public void PlaySound(AudioClip sound)
+    {
+        _audioSource.PlayOneShot(sound);
     }
 
 }

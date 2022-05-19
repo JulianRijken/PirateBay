@@ -24,6 +24,8 @@ public class EnemyShipBase : Ship
     private float _timeInRange;
     private Transform _target;
 
+    public static Action OnShipSunkGlobal;
+
     protected override void Awake()
     {
         base.Awake();
@@ -33,6 +35,8 @@ public class EnemyShipBase : Ship
     protected override void SinkShip()
     {
         base.SinkShip();
+        
+        OnShipSunkGlobal?.Invoke();
         Destroy(gameObject, 20f);
     }
 

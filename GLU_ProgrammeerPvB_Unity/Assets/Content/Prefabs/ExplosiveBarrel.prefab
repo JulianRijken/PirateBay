@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 50
   _force: 400
-  _radius: 20
+  _radius: 15
   _rotationForce: 2
   _damageLayerMask:
     serializedVersion: 2

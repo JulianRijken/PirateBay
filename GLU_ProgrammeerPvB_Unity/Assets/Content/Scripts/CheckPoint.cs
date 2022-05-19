@@ -7,11 +7,19 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _checkpointEffect;
+    [SerializeField] private ParticleSystem _collectEffect;
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private bool _autoDeactivate;
 
-    private bool _active = false;
+    private bool _active;
     public Action OnCheckPointEnter;
 
+
+    
+    private void Start()
+    {
+        _active = false;
+    }
 
     public void SetCheckpointActive(bool active)
     {
@@ -34,6 +42,13 @@ public class CheckPoint : MonoBehaviour
         
         if(!other.CompareTag("Player"))
             return;
+
+        if (_audioSource)
+        {
+            _audioSource.Play();
+        }
+        
+        _collectEffect.Play();
         
         OnCheckPointEnter?.Invoke();
         

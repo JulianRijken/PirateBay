@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PirateWater
+  m_Shader: {fileID: 4800000, guid: b9989bd1de70d57419e294b8c615691e, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Ints: []
+    m_Floats:
+    - _Metallic: 0.328
+    - _Opacity: 0.4
+    - _Power: 0.25
+    - _RedSeaFadeLength: 600
+    - _RedSeaFadeOffset: 400
+    - _Smoothness: 0.73
+    - _WaterClarity: 19.12
+    - __dirty: 1
+    m_Colors:
+    - _Blend: {r: 970, g: 1014.5, b: 0, a: 0}
+    - _RedWaterColor: {r: 0.7735849, g: 0.32299405, b: 0.24448201, a: 1}
+    - _WaterColor: {r: 0.03137255, g: 0.74509805, b: 0.80784315, a: 1}
+  m_BuildTextureStacks: []

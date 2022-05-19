@@ -23,6 +23,8 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private Compass _compass;
 
     private float _gameTimer;
+    private float _missionLength;
+    private int _shipsKilled;
 
     private Vector3[] _spawnOptions;
     
@@ -33,53 +35,16 @@ public class MissionManager : MonoBehaviour
     private bool _inMission;
     private int _targetIslandIndex;
 
+    
     public Action<OutpostIsland, bool> OnMissionFinished;
     public Action<float> OnTimerChange;
-
-
+    
     public static bool InMission => Instance._inMission;
+    public static int ShipsKilled => Instance._shipsKilled;
+    public static float TimeInMission => Instance._missionLength - Instance._gameTimer;
+    
     public static MissionManager Instance { get; private set; }
     
-
-
-    public float GetMissionAlpha()
-    {
-        var alpha = 0f;
-
-        if (_inMission)
-        {
-            var addedDistance = Mathf.Abs(1 - GetAlphaToTargetIsland()) / _missionIslands.Count;
-            alpha = Mathf.Clamp01((float)_targetIslandIndex / _missionIslands.Count + addedDistance);
-        }
-
-        return alpha;
-    }
-    
-    public float GetAlphaToTargetIsland()
-    {
-        var alpha = 0f;
-
-        if (_inMission)
-        {
-            var lastIsland = _targetIslandIndex > 0 ? _missionIslands[_targetIslandIndex - 1] : _startOutpost;
-
-            var targetIsland = _missionIslands[_targetIslandIndex];
-
-            var distanceBetweenIslands = Vector2.Distance(lastIsland.TargetLocation, targetIsland.TargetLocation);
-
-            var vector3Position = GameManager.Player.transform.position;
-            var playerPosition = new Vector2(vector3Position.x, vector3Position.z);
-            var distanceBetweenPlayerAndTargetIsland = Vector2.Distance(playerPosition, targetIsland.TargetLocation);
-
-            if (distanceBetweenPlayerAndTargetIsland > distanceBetweenIslands)
-                return 1f;
-            
-            
-            alpha = Mathf.Max(0f,distanceBetweenPlayerAndTargetIsland / distanceBetweenIslands);
-        }
-        
-        return alpha;
-    }
 
     private void Awake()
     {
@@ -87,6 +52,9 @@ public class MissionManager : MonoBehaviour
         _spawnOptions = _spawnManager.GetAvailableSpawnPoints();
 
         GameManager.Player.OnShipSunken += OnPlayerShipSunk;
+        EnemyShipBase.OnShipSunkGlobal += OnEnemyShipSunk;
+
+        _missionIslands = new List<IslandBase>();
     }
 
     private void Update()
@@ -103,6 +71,8 @@ public class MissionManager : MonoBehaviour
         }
     }
 
+    
+    
     private void OnTimerOver()
     {
         EndMission(false);
@@ -113,125 +83,12 @@ public class MissionManager : MonoBehaviour
         // Game lost :(
         EndMission(false);
     }
-
-
-    public void StartMission(OutpostIsland startOutpost, int treasureIslands, int missionLengthInMinutes)
+    
+    private void OnEnemyShipSunk()
     {
-        Debug.Log("Starting Mission");
-
-        _startOutpost = startOutpost;
-        
-        _gameTimer = missionLengthInMinutes * 60f;
-        
-        _compass.gameObject.SetActive(true);
-
-        
-        // Clear list
-        _missionIslands = new List<IslandBase>();
-        
-        // Fill list with random treasure islands
-        var treasureIslandOptions = GameManager.TreasureIslands.ToList();
-        for (var i = 0; i < treasureIslands; i++)
-        {
-            var randomIslandFromList = treasureIslandOptions[Random.Range(0, treasureIslandOptions.Count)];
-            _missionIslands.Add(randomIslandFromList);
-            treasureIslandOptions.Remove(randomIslandFromList);
-        }
-
-        // Add a random outpost as the last island
-        var outpostIslandOptions = GameManager.OutpostIslands.ToList();
-        var randomOutpost = outpostIslandOptions[Random.Range(0, outpostIslandOptions.Count)];
-        _missionIslands.Add(randomOutpost);
-
-        
-        // Set the target island to the first treasure island
-        _targetIslandIndex = 0;
-        _missionIslands[_targetIslandIndex].OnPlayerVisitIsland += OnTargetIslandVisited;
-        _missionIslands[_targetIslandIndex].CheckPoint.SetCheckpointActive(true);
-        
-        
-        // Update compass
-        _compass.Target = _missionIslands[_targetIslandIndex].CheckPoint.transform.position;
-        
-        // Spawn all objects in game
-        SpawnObjects();
-        
-
-        // Position player at start outpost
-        if (startOutpost.PlayerStart)
-        {
-            // Position Player
-            var playerTransform = GameManager.Player.transform;
-            playerTransform.position = startOutpost.PlayerStart.position;
-            playerTransform.rotation = startOutpost.PlayerStart.rotation;
-            
-            // Make sure the player ship is not sunken
-            GameManager.Player.UnSinkShip();
-        }
-        else
-        {
-            Debug.LogWarning(startOutpost.name + " has no player start");
-        }
-        
-        // Transition camera
-        
-        _inMission = true;
+        _shipsKilled++;
     }
-
-    private void SpawnObjects()
-    {
-        // Spawn all enemies & pickups
-        var spawnPoints = _spawnOptions.ToList();
-        
-        for (var i = 0; i < _enemyBigCount; i++)
-        {
-            if(spawnPoints.Count == 0)
-                return;
-            
-            var randomIndex = Random.Range(0, spawnPoints.Count);
-            var spawnPoint = spawnPoints[randomIndex];
-            spawnPoints.RemoveAt(randomIndex);
-
-            Instantiate(_enemyBigPrefab, spawnPoint, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
-        }
-        
-        for (var i = 0; i < _enemySmallCount; i++)
-        {
-            if(spawnPoints.Count == 0)
-                return;
-            
-            var randomIndex = Random.Range(0, spawnPoints.Count);
-            var spawnPoint = spawnPoints[randomIndex];
-            spawnPoints.RemoveAt(randomIndex);
-
-            Instantiate(_enemySmallPrefab, spawnPoint, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
-        }
-
-        for (var i = 0; i < _pickupCount; i++)
-        {
-            if(spawnPoints.Count == 0)
-                return;
-            
-            var randomIndex = Random.Range(0, spawnPoints.Count);
-            var spawnPoint = spawnPoints[randomIndex];
-            spawnPoints.RemoveAt(randomIndex);
-
-            Instantiate(_pickupPrefab[Random.Range(0,_pickupPrefab.Length)], spawnPoint, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
-        }
-        
-        for (var i = 0; i < _explosiveBarrelCount; i++)
-        {
-            if(spawnPoints.Count == 0)
-                return;
-            
-            var randomIndex = Random.Range(0, spawnPoints.Count);
-            var spawnPoint = spawnPoints[randomIndex];
-            spawnPoints.RemoveAt(randomIndex);
-
-            Instantiate(_explosiveBarrelPrefab, spawnPoint, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
-        }
-    }
-
+    
     private void OnTargetIslandVisited()
     {
         if (!_inMission)
@@ -255,12 +112,138 @@ public class MissionManager : MonoBehaviour
             _missionIslands[_targetIslandIndex].OnPlayerVisitIsland += OnTargetIslandVisited;
             _missionIslands[_targetIslandIndex].CheckPoint.SetCheckpointActive(true);
             
+            // Update player treasure
+            GameManager.Player.SetTreasures(_targetIslandIndex);
             
             // Update compass
             _compass.Target = _missionIslands[_targetIslandIndex].CheckPoint.transform.position;
         }
     }
+    
+    
 
+    public void StartMission(OutpostIsland startOutpost, int treasureIslands, int missionLengthInMinutes)
+    {
+        // Clear list
+        _missionIslands.Clear();
+        
+        // Fill list with random treasure islands
+        var treasureIslandOptions = GameManager.TreasureIslands.ToList();
+        for (var i = 0; i < treasureIslands; i++)
+        {
+            var randomIslandFromList = treasureIslandOptions[Random.Range(0, treasureIslandOptions.Count)];
+            _missionIslands.Add(randomIslandFromList);
+            treasureIslandOptions.Remove(randomIslandFromList);
+        }
+
+        // Add a random outpost as the last island
+        var outpostIslandOptions = GameManager.OutpostIslands.ToList();
+        var randomOutpost = outpostIslandOptions[Random.Range(0, outpostIslandOptions.Count)];
+        _missionIslands.Add(randomOutpost);
+
+        
+        // Set the target island to the first treasure island
+        _targetIslandIndex = 0;
+        _missionIslands[_targetIslandIndex].OnPlayerVisitIsland += OnTargetIslandVisited;
+        
+        // Update island checkpoints
+        foreach (var missionIsland in _missionIslands)
+            missionIsland.CheckPoint.SetCheckpointActive(false);
+        
+        _missionIslands[_targetIslandIndex].CheckPoint.SetCheckpointActive(true);
+
+        // Enable compass
+        _compass.gameObject.SetActive(true);
+        _compass.Target = _missionIslands[_targetIslandIndex].CheckPoint.transform.position;
+        
+        // Spawn all objects in game
+        SpawnObjects();
+        
+
+        // Position player at start outpost
+        if (startOutpost.PlayerStart)
+        {
+            // Position Player
+            var playerTransform = GameManager.Player.transform;
+            playerTransform.position = startOutpost.PlayerStart.position;
+            playerTransform.rotation = startOutpost.PlayerStart.rotation;
+            
+            // Make sure the player ship is not sunken
+            GameManager.Player.UnSinkShip();
+        }
+        else
+        {
+            Debug.LogWarning(startOutpost.name + " has no player start");
+        }
+        
+        // Reset player treasure
+        GameManager.Player.SetTreasures(0);
+        
+        _shipsKilled = 0;
+        
+        _startOutpost = startOutpost;
+        
+        _missionLength = missionLengthInMinutes * 60f;
+        _gameTimer = _missionLength;
+        
+        _inMission = true;
+        
+        
+        void SpawnObjects()
+        {
+            // Spawn all enemies & pickups
+            var spawnPoints = _spawnOptions.ToList();
+        
+            for (var i = 0; i < _enemyBigCount; i++)
+            {
+                if(spawnPoints.Count == 0)
+                    return;
+            
+                var randomIndex = Random.Range(0, spawnPoints.Count);
+                var spawnPoint = spawnPoints[randomIndex];
+                spawnPoints.RemoveAt(randomIndex);
+
+                Instantiate(_enemyBigPrefab, spawnPoint, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
+            }
+        
+            for (var i = 0; i < _enemySmallCount; i++)
+            {
+                if(spawnPoints.Count == 0)
+                    return;
+            
+                var randomIndex = Random.Range(0, spawnPoints.Count);
+                var spawnPoint = spawnPoints[randomIndex];
+                spawnPoints.RemoveAt(randomIndex);
+
+                Instantiate(_enemySmallPrefab, spawnPoint, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
+            }
+
+            for (var i = 0; i < _pickupCount; i++)
+            {
+                if(spawnPoints.Count == 0)
+                    return;
+            
+                var randomIndex = Random.Range(0, spawnPoints.Count);
+                var spawnPoint = spawnPoints[randomIndex];
+                spawnPoints.RemoveAt(randomIndex);
+
+                Instantiate(_pickupPrefab[Random.Range(0,_pickupPrefab.Length)], spawnPoint, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
+            }
+        
+            for (var i = 0; i < _explosiveBarrelCount; i++)
+            {
+                if(spawnPoints.Count == 0)
+                    return;
+            
+                var randomIndex = Random.Range(0, spawnPoints.Count);
+                var spawnPoint = spawnPoints[randomIndex];
+                spawnPoints.RemoveAt(randomIndex);
+
+                Instantiate(_explosiveBarrelPrefab, spawnPoint, Quaternion.Euler(0, Random.Range(0f, 360f), 0));
+            }
+        }
+    }
+    
     private void EndMission(bool gameWon)
     {
         Debug.Log("Mission End");
@@ -270,8 +253,8 @@ public class MissionManager : MonoBehaviour
         _missionIslands[_targetIslandIndex].CheckPoint.SetCheckpointActive(false);
         
         // Remove all enemies
-        var enemys = FindObjectsOfType<EnemyShipBase>();
-        foreach (var enemy in enemys)
+        var enemyShips = FindObjectsOfType<EnemyShipBase>();
+        foreach (var enemy in enemyShips)
         {
             Destroy(enemy.gameObject);
         }
@@ -295,15 +278,41 @@ public class MissionManager : MonoBehaviour
         
     }
 
-//     
-// #if UNITY_EDITOR
-//     private void OnDrawGizmos()
-//     {
-//         if (_inMission)
-//         {
-//             Gizmos.color = Color.white;
-//             Gizmos.DrawLine(GameManager.Player.transform.position, _missionIslands[_targetIslandIndex].CheckPoint.transform.position);
-//         }
-//     }
-// #endif
+    
+    public float GetMissionAlpha()
+    {
+        if (!_inMission)
+            return 0f;
+        
+        var addedDistance = Mathf.Abs(1 - GetAlphaToTargetIsland()) / _missionIslands.Count;
+        var alpha = Mathf.Clamp01((float)_targetIslandIndex / _missionIslands.Count + addedDistance);
+
+        return alpha;
+
+        float GetAlphaToTargetIsland()
+        {
+            var targetIslandAlpha = 0f;
+
+            if (_inMission)
+            {
+                var lastIsland = _targetIslandIndex > 0 ? _missionIslands[_targetIslandIndex - 1] : _startOutpost;
+
+                var targetIsland = _missionIslands[_targetIslandIndex];
+
+                var distanceBetweenIslands = Vector2.Distance(lastIsland.TargetLocation, targetIsland.TargetLocation);
+
+                var vector3Position = GameManager.Player.transform.position;
+                var playerPosition = new Vector2(vector3Position.x, vector3Position.z);
+                var distanceBetweenPlayerAndTargetIsland = Vector2.Distance(playerPosition, targetIsland.TargetLocation);
+
+                if (distanceBetweenPlayerAndTargetIsland > distanceBetweenIslands)
+                    return 1f;
+            
+            
+                targetIslandAlpha = Mathf.Max(0f,distanceBetweenPlayerAndTargetIsland / distanceBetweenIslands);
+            }
+        
+            return targetIslandAlpha;
+        }
+    }
 }

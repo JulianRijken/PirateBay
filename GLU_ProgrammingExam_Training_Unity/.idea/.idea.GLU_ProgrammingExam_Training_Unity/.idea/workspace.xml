@@ -5,45 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2fec695-e0d6-43c2-beb8-8ddbbe791966" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity Snapshot 12-05-2022.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity Snapshot 13-05-2022.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Prefabs/Islands/Outpost_Havana.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Prefabs/Islands/Outpost_Havana.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Prefabs/Islands/Outpost_Shanty.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Prefabs/Islands/Outpost_Shanty.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Prefabs/Main Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Prefabs/Main Camera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Prefabs/PlayerShip.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Prefabs/PlayerShip.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Prefabs/UIManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Prefabs/UIManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/Compas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/Compass.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/Compas.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/Compass.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/EnemyShipBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/EnemyShipBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/Missions/IslandBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/Missions/IslandBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/Missions/MissionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/Missions/MissionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/PlayerShipController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/PlayerShipController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/Ship.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/Ship.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Scripts/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Settings/Input/Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Settings/Input/Controls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Settings/Input/Controls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Settings/Input/Controls.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_01_B.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_01_B.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_01_C.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_01_C.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_02_B.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_02_B.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_02_C.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_02_C.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_03_B.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_03_B.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_03_C.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_03_C.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_04_B.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_04_B.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_04_C.mat" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Materials/PolygonPirates_Material_04_C.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Prefabs/Items/SM_Item_Compass_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/PolygonPirates/Prefabs/Items/SM_Item_Compass_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Prefabs/UI/UIManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/Assets/Content/Prefabs/UI/UIManager.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../GLU_ProgrammeerPvB_Unity/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GLU_ProgrammingExam_Training_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GLU_ProgrammingExam_Training_Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameContent/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,10 +27,12 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1332c534a8a44623b2e5cc943a0b790e157400/ec/173855fb/SerializeField.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameContent/Scripts/Enemys/Enemy_Range.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameContent/Scripts/MovingPlatform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameContent/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameContent/Scripts/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -146,6 +116,9 @@
       <workItem from="1652002711704" duration="3259000" />
       <workItem from="1652013987353" duration="2920000" />
       <workItem from="1652727489763" duration="920000" />
+      <workItem from="1652887027283" duration="683000" />
+      <workItem from="1652889536644" duration="52000" />
+      <workItem from="1652891363598" duration="2228000" />
     </task>
     <servers />
   </component>

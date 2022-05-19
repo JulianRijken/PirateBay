@@ -65,15 +65,15 @@ public class GameManager : MonoBehaviour
         
         MissionManager.Instance.StartMission(_mainMenuIsland,2, 5);
         MissionManager.Instance.OnMissionFinished += OnMissionFinished;
-        
+
         _player.SetControlsEnabled(true);
-        
+
         _mainMenuIsland.IslandCamera.Priority = 0;
         _playerCamera.Priority = 1;
         OnGameStart?.Invoke();
     }
     
-    /// Shows the end screen
+    // Shows the end screen
     private void GameOver(bool isGameWon)
     {
         _player.SetControlsEnabled(false);

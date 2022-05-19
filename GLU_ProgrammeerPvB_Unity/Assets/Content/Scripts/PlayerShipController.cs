@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class PlayerShipController : Ship, ICanPickup
 {
@@ -26,6 +27,7 @@ public class PlayerShipController : Ship, ICanPickup
     [Header("Attack Effect")] 
     [SerializeField] private HealSettings _healSettings;
 
+    [SerializeField] private GameObject[] _treasures;
 
     protected override void Awake()
     {
@@ -67,6 +69,15 @@ public class PlayerShipController : Ship, ICanPickup
         }
     }
 
+    public void SetTreasures(int amount)
+    {
+        var count = Mathf.Clamp(amount, 0, _treasures.Length);
+        
+        for (var i = 0; i < _treasures.Length; i++)
+        {
+            _treasures[i].SetActive(i + 1 <= count);
+        }
+    }
 
     public void SetControlsEnabled(bool enabled)
     {
@@ -157,6 +168,9 @@ public class PlayerShipController : Ship, ICanPickup
     
     public bool CanPickup()
     {
+        if (_shipSunk)
+            return false;
+        
         return !_hasEffect;
     }
 
@@ -180,6 +194,9 @@ public class PlayerShipController : Ship, ICanPickup
     
     private void OnSinkShipInput(InputAction.CallbackContext context)
     {
+        if(_shipSunk)
+            return;
+        
         _shipHealth = 0f;
         OnHealthChangeEvent?.Invoke(_shipHealth,_shipMaxHealth);
         SinkShip();
